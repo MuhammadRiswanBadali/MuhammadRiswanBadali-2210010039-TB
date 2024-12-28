@@ -1,3 +1,14 @@
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,7 +25,13 @@ public class PegawaiForm extends javax.swing.JFrame {
      */
     public PegawaiForm() {
         initComponents();
+        tampilData();
+        bersih();
     }
+    
+    String id;
+    Connection conn = koneksi.getKoneksi();
+    PreparedStatement pst;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,8 +55,10 @@ public class PegawaiForm extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +80,11 @@ public class PegawaiForm extends javax.swing.JFrame {
         jLabel4.setText("No Telepon : ");
 
         jButton1.setText("Tambah");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Edit");
 
@@ -73,32 +97,20 @@ public class PegawaiForm extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID Pegawai", "Nama Pegawai", "Tanggal Lahir", "Alamat", "No Telepon"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
-            };
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-        }
+        jLabel5.setText("Cari pegawai berdasarkan nama pegawai : ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -127,9 +139,14 @@ public class PegawaiForm extends javax.swing.JFrame {
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField4))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,9 +175,13 @@ public class PegawaiForm extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton4)
                     .addComponent(jButton3))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +205,35 @@ public class PegawaiForm extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
+                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Tambah Data", JOptionPane.WARNING_MESSAGE);
+            } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
+                JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
+            } else {
+                String queryTambah = "INSERT INTO pegawai (nama, tanggal_lahir, alamat, no_telepon) VALUES (?, ?, ?, ?)";
+                pst = conn.prepareStatement(queryTambah);
+
+                pst.setString(1, jTextField1.getText());
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                pst.setString(2, sdf.format(jDateChooser1.getDate()));
+                pst.setString(3, jTextField2.getText());
+                pst.setString(4, jTextField3.getText());
+
+                pst.executeUpdate();
+                tampilData(); // Ganti dengan metode Anda untuk memuat ulang data di jTable1
+                bersih();     // Ganti dengan metode Anda untuk membersihkan input
+
+                JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Ditambahkan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,11 +280,61 @@ public class PegawaiForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
+    private void tampilData() {
+        try {
+            String[] judul = {"ID Pegawai", "Nama", "Tanggal Lahir", "Alamat", "No Telepon"};
+            DefaultTableModel dtm = new DefaultTableModel(null, judul);
+            jTable2.setModel(dtm);
+            String sql = "SELECT * FROM pegawai";
+
+            if (!jTextField4.getText().isEmpty()) {
+                sql = "SELECT * FROM pegawai WHERE nama LIKE ?";
+            }
+
+            pst = conn.prepareStatement(sql);
+
+            if (!jTextField4.getText().isEmpty()) {
+                pst.setString(1, "%" + jTextField4.getText() + "%");
+            }
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String[] data = {
+                    rs.getString("id_pegawai"),
+                    rs.getString("nama"),
+                    rs.getString("tanggal_lahir"),
+                    rs.getString("alamat"),
+                    rs.getString("no_telepon")
+                };
+                dtm.addRow(data);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    private void bersih() {
+        jTextField1.setText(""); // Membersihkan input nama
+        jDateChooser1.setDate(null); // Membersihkan input tanggal lahir
+        jTextField2.setText(""); // Membersihkan input alamat
+        jTextField3.setText(""); // Membersihkan input no telepon
+
+        jButton1.setEnabled(true); // Mengaktifkan tombol Tambah
+        jButton2.setEnabled(false); // Menonaktifkan tombol Edit
+        jButton3.setEnabled(false); // Menonaktifkan tombol Hapus
+    }
+
+    
 }
