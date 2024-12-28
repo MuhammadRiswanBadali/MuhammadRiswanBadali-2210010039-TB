@@ -1,3 +1,14 @@
+
+import java.text.SimpleDateFormat;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,7 +25,14 @@ public class AbsensiForm extends javax.swing.JFrame {
      */
     public AbsensiForm() {
         initComponents();
+        tampilData();
+        bersih();
+        isiComboBoxPegawai();
     }
+    
+    String id;
+    Connection conn = koneksi.getKoneksi();
+    PreparedStatement pst;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,6 +56,8 @@ public class AbsensiForm extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +75,11 @@ public class AbsensiForm extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Izin", "Hadir", "Sakit" }));
 
         jButton1.setText("Tambah");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Edit");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +105,8 @@ public class AbsensiForm extends javax.swing.JFrame {
 
         jButton4.setText("Bersihkan");
 
+        jLabel4.setText("Cari pegawai berdasarkan nama pegawai : ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -97,20 +124,25 @@ public class AbsensiForm extends javax.swing.JFrame {
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(53, 53, 53)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(54, 54, 54)
-                            .addComponent(jButton4))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(31, 31, 31)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48)
+                                .addComponent(jButton4)))))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,8 +166,12 @@ public class AbsensiForm extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -155,6 +191,40 @@ public class AbsensiForm extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // Validasi jika data belum lengkap
+            if (jComboBox1.getSelectedIndex() == -1 || jDateChooser1.getDate() == null || jComboBox2.getSelectedIndex() == -1) {
+                JOptionPane.showMessageDialog(null, "Data Absensi Belum Lengkap", "Gagal Tambah Data", JOptionPane.WARNING_MESSAGE);
+            } else {
+                // Mendapatkan data dari form
+                String selectedPegawai = (String) jComboBox1.getSelectedItem();
+                String idPegawai = selectedPegawai.split(" - ")[0]; // Mendapatkan ID Pegawai dari pilihan ComboBox
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String tanggal = sdf.format(jDateChooser1.getDate()); // Mengubah tanggal ke format yyyy-MM-dd
+                String status = (String) jComboBox2.getSelectedItem(); // Mendapatkan status dari ComboBox2
+
+                // Query untuk menambahkan data absensi ke database
+                String queryInsert = "INSERT INTO absensi (id_pegawai, tanggal_absen, status) VALUES (?, ?, ?)";
+                pst = conn.prepareStatement(queryInsert);
+                pst.setString(1, idPegawai);
+                pst.setString(2, tanggal);
+                pst.setString(3, status);
+
+                // Menyimpan data ke database
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Data Absensi Berhasil Ditambahkan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+
+                // Memperbarui tabel dan membersihkan form
+                tampilData();
+                bersih();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,8 +272,81 @@ public class AbsensiForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    private void tampilData() {
+        try {
+            String[] judul = {"ID Absensi", "ID Pegawai", "Nama Pegawai", "Tanggal Absen", "Status"};
+            DefaultTableModel dtm = new DefaultTableModel(null, judul);
+            jTable1.setModel(dtm);
+
+            // Query untuk mendapatkan data absensi dengan relasi ke tabel pegawai
+            String sql = "SELECT a.id_absensi, a.id_pegawai, p.nama, a.tanggal_absen, a.status " +
+                         "FROM absensi a JOIN pegawai p ON a.id_pegawai = p.id_pegawai";
+            pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String[] data = {
+                    rs.getString("id_absensi"),
+                    rs.getString("id_pegawai"),
+                    rs.getString("nama"),
+                    rs.getString("tanggal_absen"),
+                    rs.getString("status")
+                };
+                dtm.addRow(data);
+            }
+
+            // Filter data berdasarkan input di jTextField3 jika ada
+            String filterText = jTextField1.getText().trim();
+            if (!filterText.isEmpty()) {
+                for (int i = dtm.getRowCount() - 1; i >= 0; i--) {
+                    String namaPegawai = dtm.getValueAt(i, 2).toString();
+                    if (!namaPegawai.toLowerCase().contains(filterText.toLowerCase())) {
+                        dtm.removeRow(i);
+                    }
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan Saat Menampilkan Data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void bersih() {
+        jComboBox1.setSelectedIndex(0); // Reset pilihan pegawai di jComboBox1
+        jDateChooser1.setDate(null);    // Kosongkan tanggal di jDateChooser1
+        jComboBox2.setSelectedIndex(0); // Reset pilihan status di jComboBox2
+        jTextField1.setText("");        // Kosongkan filter pencarian di jTextField3
+        jButton1.setEnabled(true);      // Aktifkan tombol Tambah
+        jButton2.setEnabled(false);     // Nonaktifkan tombol Edit
+        jButton3.setEnabled(false);     // Nonaktifkan tombol Hapus
+    }
+    
+    private void isiComboBoxPegawai() {
+        try {
+            jComboBox1.removeAllItems(); // Bersihkan item di combo box
+            jComboBox1.addItem("Pilih Pegawai"); // Tambahkan pilihan default
+
+            String sql = "SELECT id_pegawai, nama FROM pegawai";
+            pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String idPegawai = rs.getString("id_pegawai");
+                String namaPegawai = rs.getString("nama");
+                jComboBox1.addItem(idPegawai + "-" + namaPegawai); // Format: "ID - Nama"
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan Saat Mengisi ComboBox: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
 }
