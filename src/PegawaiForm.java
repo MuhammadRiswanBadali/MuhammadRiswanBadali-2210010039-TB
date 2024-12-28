@@ -96,6 +96,11 @@ public class PegawaiForm extends javax.swing.JFrame {
         });
 
         jButton3.setText("Hapus");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Bersihkan");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -294,6 +299,30 @@ public class PegawaiForm extends javax.swing.JFrame {
         jButton2.setEnabled(true);  // Mengaktifkan tombol Edit
         jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
     }//GEN-LAST:event_jTable2MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            if (jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty() 
+                    || jTextField3.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Hapus Data", JOptionPane.WARNING_MESSAGE);
+            } else {
+                int konfirmasi = JOptionPane.showConfirmDialog(null, "Hapus Data Pegawai ini?", "Konfirmasi Hapus?", JOptionPane.YES_NO_OPTION);
+                if (konfirmasi == JOptionPane.YES_OPTION) {
+                    String queryHapus = "DELETE FROM pegawai WHERE id_pegawai=?";
+                    pst = conn.prepareStatement(queryHapus);
+                    pst.setString(1, id);
+                    pst.executeUpdate();
+
+                    JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Dihapus", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                    tampilData(); // Memuat ulang data di jTable1
+                    bersih();     // Membersihkan input form
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
