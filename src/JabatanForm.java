@@ -1,4 +1,5 @@
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -55,6 +56,8 @@ public class JabatanForm extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,10 +76,25 @@ public class JabatanForm extends javax.swing.JFrame {
         });
 
         jButton2.setText("Edit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Hapus");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Bersihkan");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,7 +107,14 @@ public class JabatanForm extends javax.swing.JFrame {
                 "ID Jabatan", "Nama Jabatan", "Gaji Pokok"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
+
+        jLabel3.setText("Cari jabatan berdasarkan nama jabatan : ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -117,9 +142,14 @@ public class JabatanForm extends javax.swing.JFrame {
                                     .addComponent(jTextField1)
                                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,9 +168,13 @@ public class JabatanForm extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,6 +215,105 @@ public class JabatanForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            // Validasi jika nama jabatan kosong
+            if (jTextField1.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Nama Jabatan Belum Diisi", "Gagal Edit Data", JOptionPane.WARNING_MESSAGE);
+            } 
+            // Validasi hanya untuk gaji pokok jika ada perubahan pada gaji pokok dan kolom tidak kosong
+            else if (!jTextField2.getText().isEmpty() && !jTextField2.getText().matches("\\d+(\\.\\d{1,2})?")) {
+                JOptionPane.showMessageDialog(null, "Gaji Pokok hanya boleh berisi angka dan satu titik desimal maksimal dua angka di belakangnya.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
+            } 
+            else {
+                int konfirmasi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin mengedit data Jabatan ini?", "Konfirmasi Edit?", JOptionPane.YES_NO_OPTION);
+                if (konfirmasi == JOptionPane.YES_OPTION) {
+                    // Menyusun query untuk memperbarui data jabatan
+                    String queryEdit = "UPDATE jabatan SET nama_jabatan=?, gaji_pokok=? WHERE id_jabatan=?";
+                    pst = conn.prepareStatement(queryEdit);
+
+                    pst.setString(1, jTextField1.getText()); // Nama Jabatan
+
+                    // Jika gaji pokok diubah, perbarui gaji pokok
+                    if (!jTextField2.getText().isEmpty()) {
+                        pst.setBigDecimal(2, new BigDecimal(jTextField2.getText())); // Gaji Pokok
+                    } else {
+                        // Jika gaji pokok tidak diubah, set nilai lama dari gaji pokok
+                        pst.setNull(2, java.sql.Types.DECIMAL);
+                    }
+
+                    pst.setString(3, id); // ID Jabatan yang dipilih
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Data Jabatan Berhasil Diperbarui", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                    tampilData(); // Memuat ulang data di jTable1
+                    bersih();     // Membersihkan input form
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Format Gaji Pokok tidak valid.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int row = jTable1.getSelectedRow();  // Mendapatkan baris yang dipilih
+        id = jTable1.getValueAt(row, 0).toString();  // Mengambil ID Jabatan dari kolom pertama (ID Jabatan)
+
+        // Mengambil nilai dari tabel dan menampilkan pada field input
+        jTextField1.setText(jTable1.getValueAt(row, 1).toString());  // Nama Jabatan
+        jTextField2.setText(jTable1.getValueAt(row, 2).toString());  // Gaji Pokok
+
+        // Mengatur tombol untuk edit dan hapus
+        jButton1.setEnabled(false);  // Menonaktifkan tombol Tambah (karena sudah memilih data)
+        jButton2.setEnabled(true);   // Mengaktifkan tombol Edit
+        jButton3.setEnabled(true);   // Mengaktifkan tombol Hapus
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            // Pastikan ada data yang dipilih pada jTable1
+            int row = jTable1.getSelectedRow();
+            if (row == -1) {
+                JOptionPane.showMessageDialog(null, "Silakan pilih data jabatan yang ingin dihapus.", "Pilih Data", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            // Mendapatkan ID jabatan yang dipilih dari jTable1
+            String idJabatan = jTable1.getValueAt(row, 0).toString();
+
+            // Konfirmasi untuk menghapus data jabatan
+            int konfirmasi = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin menghapus data Jabatan ini?", "Konfirmasi Hapus?", JOptionPane.YES_NO_OPTION);
+
+            if (konfirmasi == JOptionPane.YES_OPTION) {
+                // Query untuk menghapus data jabatan berdasarkan ID
+                String queryHapus = "DELETE FROM jabatan WHERE id_jabatan=?";
+                pst = conn.prepareStatement(queryHapus);
+                pst.setString(1, idJabatan); // Set ID jabatan yang akan dihapus
+
+                // Eksekusi query hapus
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(null, "Data Jabatan Berhasil Dihapus", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+
+                // Memuat ulang data di jTable1
+                tampilData();
+
+                // Membersihkan input form
+                bersih();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        bersih();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,11 +357,13 @@ public class JabatanForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 
     private void tampilData() {
@@ -238,14 +373,33 @@ public class JabatanForm extends javax.swing.JFrame {
             jTable1.setModel(dtm);
             String sql = "SELECT * FROM jabatan";
 
+            // Jika ada pencarian berdasarkan nama jabatan
+            if (!jTextField3.getText().isEmpty()) {
+                sql = "SELECT * FROM jabatan WHERE nama_jabatan LIKE ?";
+            }
+
             pst = conn.prepareStatement(sql);
+
+            // Jika ada filter pencarian, set parameter query
+            if (!jTextField3.getText().isEmpty()) {
+                pst.setString(1, "%" + jTextField3.getText() + "%");
+            }
+
             ResultSet rs = pst.executeQuery();
 
+            // Mengambil hasil query dan menambahkannya ke tabel
             while (rs.next()) {
+                String idJabatan = rs.getString("id_jabatan");
+                String namaJabatan = rs.getString("nama_jabatan");
+                BigDecimal gajiPokok = rs.getBigDecimal("gaji_pokok"); // Mengambil gaji pokok sebagai BigDecimal
+
+                // Jika ingin menampilkan gaji pokok dalam format yang lebih mudah dibaca (misalnya dengan 2 desimal)
+                String formattedGajiPokok = String.format("%.2f", gajiPokok);
+
                 String[] data = {
-                    rs.getString("id_jabatan"),
-                    rs.getString("nama_jabatan"),
-                    rs.getString("gaji_pokok")
+                    idJabatan,
+                    namaJabatan,
+                    formattedGajiPokok  // Menampilkan gaji pokok dengan format 2 desimal
                 };
                 dtm.addRow(data);
             }
@@ -253,7 +407,6 @@ public class JabatanForm extends javax.swing.JFrame {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Terjadi Kesalahan Saat Menampilkan Data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
     private void bersih() {
