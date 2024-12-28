@@ -6,7 +6,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /*
@@ -87,6 +89,11 @@ public class PegawaiForm extends javax.swing.JFrame {
         });
 
         jButton2.setText("Edit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Hapus");
 
@@ -108,6 +115,11 @@ public class PegawaiForm extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         jLabel5.setText("Cari pegawai berdasarkan nama pegawai : ");
@@ -234,6 +246,54 @@ public class PegawaiForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
+                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Perbarui Data", JOptionPane.WARNING_MESSAGE);
+            } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
+                JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
+            } else {
+                String queryUpdate = "UPDATE pegawai SET nama=?, tanggal_lahir=?, alamat=?, no_telepon=? WHERE id_pegawai=?";
+                pst = conn.prepareStatement(queryUpdate);
+
+                pst.setString(1, jTextField1.getText());
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                pst.setString(2, sdf.format(jDateChooser1.getDate()));
+                pst.setString(3, jTextField2.getText());
+                pst.setString(4, jTextField3.getText());
+                pst.setString(5, id); // Asumsikan variabel `id` berisi nilai `id_pegawai` yang dipilih
+
+                pst.executeUpdate();
+                tampilData(); // Memuat ulang data di jTable1
+                bersih();     // Membersihkan input
+
+                JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Diperbarui", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        int row = jTable2.getSelectedRow();
+        id = jTable2.getValueAt(row, 0).toString(); // Mengambil ID Pegawai
+        jTextField1.setText(jTable2.getValueAt(row, 1).toString()); // Mengisi Nama
+        try {
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(jTable2.getValueAt(row, 2).toString());
+            jDateChooser1.setDate(date); // Mengisi Tanggal Lahir
+        } catch (ParseException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        jTextField2.setText(jTable2.getValueAt(row, 3).toString()); // Mengisi Alamat
+        jTextField3.setText(jTable2.getValueAt(row, 4).toString()); // Mengisi No Telepon
+
+        jButton1.setEnabled(false); // Menonaktifkan tombol Tambah
+        jButton2.setEnabled(true);  // Mengaktifkan tombol Edit
+        jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
+    }//GEN-LAST:event_jTable2MouseClicked
 
     /**
      * @param args the command line arguments
