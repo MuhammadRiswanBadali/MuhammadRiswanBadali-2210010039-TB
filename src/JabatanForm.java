@@ -1,3 +1,16 @@
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,8 +27,14 @@ public class JabatanForm extends javax.swing.JFrame {
      */
     public JabatanForm() {
         initComponents();
+        tampilData();
+        bersih();
     }
 
+    String id;
+    Connection conn = koneksi.getKoneksi();
+    PreparedStatement pst;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,6 +66,11 @@ public class JabatanForm extends javax.swing.JFrame {
         jLabel2.setText("Gaji Pokok : ");
 
         jButton1.setText("Tambah");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Edit");
 
@@ -133,6 +157,31 @@ public class JabatanForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            if (jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Data Jabatan Belum Diisi", "Gagal Tambah Data", JOptionPane.WARNING_MESSAGE);
+            } else if (!jTextField2.getText().matches("\\d+")) { // Validasi gaji pokok hanya angka
+                JOptionPane.showMessageDialog(null, "Gaji Pokok hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
+            } else {
+                String queryTambah = "INSERT INTO jabatan (nama_jabatan, gaji_pokok) VALUES (?, ?)";
+                pst = conn.prepareStatement(queryTambah);
+
+                pst.setString(1, jTextField1.getText());
+                pst.setString(2, jTextField2.getText());
+
+                pst.executeUpdate();
+                tampilData(); // Memuat ulang data di jTable1
+                bersih();     // Membersihkan input form
+
+                JOptionPane.showMessageDialog(null, "Data Jabatan Berhasil Ditambahkan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -181,4 +230,37 @@ public class JabatanForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+    private void tampilData() {
+        try {
+            String[] judul = {"ID Jabatan", "Nama Jabatan", "Gaji Pokok"};
+            DefaultTableModel dtm = new DefaultTableModel(null, judul);
+            jTable1.setModel(dtm);
+            String sql = "SELECT * FROM jabatan";
+
+            pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String[] data = {
+                    rs.getString("id_jabatan"),
+                    rs.getString("nama_jabatan"),
+                    rs.getString("gaji_pokok")
+                };
+                dtm.addRow(data);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan Saat Menampilkan Data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    private void bersih() {
+        jTextField1.setText("");  // Membersihkan kolom Nama Jabatan
+        jTextField2.setText("");  // Membersihkan kolom Gaji Pokok
+        jButton1.setEnabled(true); // Mengaktifkan tombol Tambah
+        jButton2.setEnabled(false); // Menonaktifkan tombol Edit
+        jButton3.setEnabled(false); // Menonaktifkan tombol Hapus
+    }
 }
