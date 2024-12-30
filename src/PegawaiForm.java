@@ -29,6 +29,7 @@ public class PegawaiForm extends javax.swing.JFrame {
         initComponents();
         tampilData();
         bersih();
+        isiComboBoxJabatan();
     }
     
     String id;
@@ -62,6 +63,8 @@ public class PegawaiForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,6 +144,10 @@ public class PegawaiForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setText("Pilih Jabatan : ");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -148,79 +155,89 @@ public class PegawaiForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(109, 109, 109)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3))
-                                .addGap(19, 19, 19))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGap(162, 162, 162)
+                        .addComponent(jLabel5)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(93, 93, 93)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(206, 206, 206)
-                                .addComponent(jButton5))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextField2)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 853, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(353, 353, 353)
+                        .addComponent(jButton5)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -244,14 +261,47 @@ public class PegawaiForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+//        try {
+//            if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
+//                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty()) {
+//                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Tambah Data", JOptionPane.WARNING_MESSAGE);
+//            } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
+//                JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
+//            } else {
+//                String queryTambah = "INSERT INTO pegawai (nama, tanggal_lahir, alamat, no_telepon) VALUES (?, ?, ?, ?)";
+//                pst = conn.prepareStatement(queryTambah);
+//
+//                pst.setString(1, jTextField1.getText());
+//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//                pst.setString(2, sdf.format(jDateChooser1.getDate()));
+//                pst.setString(3, jTextField2.getText());
+//                pst.setString(4, jTextField3.getText());
+//
+//                pst.executeUpdate();
+//                tampilData(); // Ganti dengan metode Anda untuk memuat ulang data di jTable1
+//                bersih();     // Ganti dengan metode Anda untuk membersihkan input
+//
+//                JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Ditambahkan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+//            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+//        }
+
         try {
             if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
-                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Tambah Data", JOptionPane.WARNING_MESSAGE);
+                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() 
+                    || jComboBox1.getSelectedIndex() == 0) { // Validasi jComboBox1
+                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Lengkap", "Gagal Tambah Data", JOptionPane.WARNING_MESSAGE);
             } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
                 JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
             } else {
-                String queryTambah = "INSERT INTO pegawai (nama, tanggal_lahir, alamat, no_telepon) VALUES (?, ?, ?, ?)";
+                // Mendapatkan id_jabatan dari pilihan jComboBox1
+                String selectedJabatan = (String) jComboBox1.getSelectedItem();
+                String idJabatan = selectedJabatan.split(" - ")[0]; // Ekstraksi ID dari format "ID - Nama Jabatan"
+
+                // Query untuk menambahkan data pegawai dengan id_jabatan
+                String queryTambah = "INSERT INTO pegawai (nama, tanggal_lahir, alamat, no_telepon, id_jabatan) VALUES (?, ?, ?, ?, ?)";
                 pst = conn.prepareStatement(queryTambah);
 
                 pst.setString(1, jTextField1.getText());
@@ -259,7 +309,9 @@ public class PegawaiForm extends javax.swing.JFrame {
                 pst.setString(2, sdf.format(jDateChooser1.getDate()));
                 pst.setString(3, jTextField2.getText());
                 pst.setString(4, jTextField3.getText());
+                pst.setString(5, idJabatan); // Menambahkan id_jabatan ke query
 
+                // Eksekusi query
                 pst.executeUpdate();
                 tampilData(); // Ganti dengan metode Anda untuk memuat ulang data di jTable1
                 bersih();     // Ganti dengan metode Anda untuk membersihkan input
@@ -270,54 +322,141 @@ public class PegawaiForm extends javax.swing.JFrame {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try {
-            if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
-                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Perbarui Data", JOptionPane.WARNING_MESSAGE);
-            } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
-                JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
-            } else {
-                String queryUpdate = "UPDATE pegawai SET nama=?, tanggal_lahir=?, alamat=?, no_telepon=? WHERE id_pegawai=?";
-                pst = conn.prepareStatement(queryUpdate);
+//        try {
+//            if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
+//                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty()) {
+//                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Perbarui Data", JOptionPane.WARNING_MESSAGE);
+//            } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
+//                JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
+//            } else {
+//                String queryUpdate = "UPDATE pegawai SET nama=?, tanggal_lahir=?, alamat=?, no_telepon=? WHERE id_pegawai=?";
+//                pst = conn.prepareStatement(queryUpdate);
+//
+//                pst.setString(1, jTextField1.getText());
+//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//                pst.setString(2, sdf.format(jDateChooser1.getDate()));
+//                pst.setString(3, jTextField2.getText());
+//                pst.setString(4, jTextField3.getText());
+//                pst.setString(5, id); // Asumsikan variabel `id` berisi nilai `id_pegawai` yang dipilih
+//
+//                pst.executeUpdate();
+//                tampilData(); // Memuat ulang data di jTable1
+//                bersih();     // Membersihkan input
+//
+//                JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Diperbarui", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+//            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+//        }
 
-                pst.setString(1, jTextField1.getText());
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                pst.setString(2, sdf.format(jDateChooser1.getDate()));
-                pst.setString(3, jTextField2.getText());
-                pst.setString(4, jTextField3.getText());
-                pst.setString(5, id); // Asumsikan variabel `id` berisi nilai `id_pegawai` yang dipilih
+                                           
+                                          
+    try {
+        // Validasi jika data belum lengkap
+        if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
+                || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() 
+                || jComboBox1.getSelectedIndex() == 0) { // Validasi ComboBox jabatan
+            JOptionPane.showMessageDialog(null, "Data Pegawai Belum Lengkap", "Gagal Perbarui Data", JOptionPane.WARNING_MESSAGE);
+        } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
+            JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
+        } else {
+            // Mendapatkan ID Jabatan dari ComboBox1
+            String selectedJabatan = (String) jComboBox1.getSelectedItem();
+            String idJabatan = selectedJabatan.split(" - ")[0]; // Ambil ID jabatan dari format "ID - Nama"
 
-                pst.executeUpdate();
-                tampilData(); // Memuat ulang data di jTable1
-                bersih();     // Membersihkan input
+            // Query untuk memperbarui data pegawai
+            String queryUpdate = "UPDATE pegawai SET nama=?, tanggal_lahir=?, alamat=?, no_telepon=?, id_jabatan=? WHERE id_pegawai=?";
+            pst = conn.prepareStatement(queryUpdate);
 
-                JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Diperbarui", "Sukses", JOptionPane.INFORMATION_MESSAGE);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            pst.setString(1, jTextField1.getText());
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            pst.setString(2, sdf.format(jDateChooser1.getDate()));
+            pst.setString(3, jTextField2.getText());
+            pst.setString(4, jTextField3.getText());
+            pst.setString(5, idJabatan); // ID Jabatan dari ComboBox
+            pst.setString(6, id);        // Asumsikan variabel `id` berisi nilai `id_pegawai` yang dipilih
+
+            // Eksekusi query
+            pst.executeUpdate();
+            tampilData(); // Memuat ulang data di jTable1
+            bersih();     // Membersihkan input
+            jComboBox1.setSelectedIndex(0); // Kembali ke index 0 pada jComboBox1
+
+            JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Diperbarui", "Sukses", JOptionPane.INFORMATION_MESSAGE);
         }
+    } catch (SQLException ex) {
+        Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+
+   
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+//        int row = jTable2.getSelectedRow();
+//        id = jTable2.getValueAt(row, 0).toString(); // Mengambil ID Pegawai
+//        jTextField1.setText(jTable2.getValueAt(row, 1).toString()); // Mengisi Nama
+//        try {
+//            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(jTable2.getValueAt(row, 2).toString());
+//            jDateChooser1.setDate(date); // Mengisi Tanggal Lahir
+//        } catch (ParseException ex) {
+//            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+//        }
+//        jTextField2.setText(jTable2.getValueAt(row, 3).toString()); // Mengisi Alamat
+//        jTextField3.setText(jTable2.getValueAt(row, 4).toString()); // Mengisi No Telepon
+//
+//        jButton1.setEnabled(false); // Menonaktifkan tombol Tambah
+//        jButton2.setEnabled(true);  // Mengaktifkan tombol Edit
+//        jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
         int row = jTable2.getSelectedRow();
-        id = jTable2.getValueAt(row, 0).toString(); // Mengambil ID Pegawai
-        jTextField1.setText(jTable2.getValueAt(row, 1).toString()); // Mengisi Nama
-        try {
-            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(jTable2.getValueAt(row, 2).toString());
-            jDateChooser1.setDate(date); // Mengisi Tanggal Lahir
-        } catch (ParseException ex) {
-            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-        }
-        jTextField2.setText(jTable2.getValueAt(row, 3).toString()); // Mengisi Alamat
-        jTextField3.setText(jTable2.getValueAt(row, 4).toString()); // Mengisi No Telepon
+id = jTable2.getValueAt(row, 0).toString(); // Mengambil ID Pegawai
+jTextField1.setText(jTable2.getValueAt(row, 1).toString()); // Mengisi Nama
 
-        jButton1.setEnabled(false); // Menonaktifkan tombol Tambah
-        jButton2.setEnabled(true);  // Mengaktifkan tombol Edit
-        jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
+try {
+    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(jTable2.getValueAt(row, 2).toString());
+    jDateChooser1.setDate(date); // Mengisi Tanggal Lahir
+} catch (ParseException ex) {
+    Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+}
+
+jTextField2.setText(jTable2.getValueAt(row, 3).toString()); // Mengisi Alamat
+jTextField3.setText(jTable2.getValueAt(row, 4).toString()); // Mengisi No Telepon
+
+try {
+    // Query untuk mendapatkan ID Jabatan pegawai
+    String query = "SELECT id_jabatan FROM pegawai WHERE id_pegawai = ?";
+    pst = conn.prepareStatement(query);
+    pst.setString(1, id); // Menggunakan ID Pegawai yang diambil dari tabel
+    ResultSet rs = pst.executeQuery();
+
+    if (rs.next()) {
+        String idJabatan = rs.getString("id_jabatan");
+        for (int i = 0; i < jComboBox1.getItemCount(); i++) {
+            String item = jComboBox1.getItemAt(i);
+            if (item.startsWith(idJabatan + " - ")) { // Cocokkan ID Jabatan di ComboBox
+                jComboBox1.setSelectedIndex(i);
+                break;
+            }
+        }
+    }
+} catch (SQLException ex) {
+    Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+    JOptionPane.showMessageDialog(null, "Gagal memuat data jabatan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+}
+
+// Mengatur tombol
+jButton1.setEnabled(false); // Menonaktifkan tombol Tambah
+jButton2.setEnabled(true);  // Mengaktifkan tombol Edit
+jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
+
     }//GEN-LAST:event_jTable2MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -395,12 +534,14 @@ public class PegawaiForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
@@ -410,40 +551,84 @@ public class PegawaiForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 
+//    private void tampilData() {
+//        try {
+//            String[] judul = {"ID Pegawai", "Nama", "Tanggal Lahir", "Alamat", "No Telepon"};
+//            DefaultTableModel dtm = new DefaultTableModel(null, judul);
+//            jTable2.setModel(dtm);
+//            String sql = "SELECT * FROM pegawai";
+//
+//            if (!jTextField4.getText().isEmpty()) {
+//                sql = "SELECT * FROM pegawai WHERE nama LIKE ?";
+//            }
+//
+//            pst = conn.prepareStatement(sql);
+//
+//            if (!jTextField4.getText().isEmpty()) {
+//                pst.setString(1, "%" + jTextField4.getText() + "%");
+//            }
+//
+//            ResultSet rs = pst.executeQuery();
+//
+//            while (rs.next()) {
+//                String[] data = {
+//                    rs.getString("id_pegawai"),
+//                    rs.getString("nama"),
+//                    rs.getString("tanggal_lahir"),
+//                    rs.getString("alamat"),
+//                    rs.getString("no_telepon")
+//                };
+//                dtm.addRow(data);
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//    }
+    
     private void tampilData() {
-        try {
-            String[] judul = {"ID Pegawai", "Nama", "Tanggal Lahir", "Alamat", "No Telepon"};
-            DefaultTableModel dtm = new DefaultTableModel(null, judul);
-            jTable2.setModel(dtm);
-            String sql = "SELECT * FROM pegawai";
+    try {
+        String[] judul = {"ID Pegawai", "Nama", "Tanggal Lahir", "Alamat", "No Telepon", "Jabatan"};
+        DefaultTableModel dtm = new DefaultTableModel(null, judul);
+        jTable2.setModel(dtm);
 
-            if (!jTextField4.getText().isEmpty()) {
-                sql = "SELECT * FROM pegawai WHERE nama LIKE ?";
-            }
+        // Query default untuk menampilkan semua data pegawai dengan relasi jabatan
+        String sql = "SELECT p.id_pegawai, p.nama, p.tanggal_lahir, p.alamat, p.no_telepon, j.nama_jabatan " +
+                     "FROM pegawai p " +
+                     "LEFT JOIN jabatan j ON p.id_jabatan = j.id_jabatan";
 
-            pst = conn.prepareStatement(sql);
-
-            if (!jTextField4.getText().isEmpty()) {
-                pst.setString(1, "%" + jTextField4.getText() + "%");
-            }
-
-            ResultSet rs = pst.executeQuery();
-
-            while (rs.next()) {
-                String[] data = {
-                    rs.getString("id_pegawai"),
-                    rs.getString("nama"),
-                    rs.getString("tanggal_lahir"),
-                    rs.getString("alamat"),
-                    rs.getString("no_telepon")
-                };
-                dtm.addRow(data);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        // Jika ada filter pada jTextField4
+        if (!jTextField4.getText().isEmpty()) {
+            sql += " WHERE p.nama LIKE ?";
         }
 
+        pst = conn.prepareStatement(sql);
+
+        // Set parameter jika ada filter
+        if (!jTextField4.getText().isEmpty()) {
+            pst.setString(1, "%" + jTextField4.getText() + "%");
+        }
+
+        ResultSet rs = pst.executeQuery();
+
+        // Menambahkan data ke tabel
+        while (rs.next()) {
+            String[] data = {
+                rs.getString("id_pegawai"),
+                rs.getString("nama"),
+                rs.getString("tanggal_lahir"),
+                rs.getString("alamat"),
+                rs.getString("no_telepon"),
+                rs.getString("nama_jabatan") != null ? rs.getString("nama_jabatan") : "Belum Ditentukan" // Jika jabatan null
+            };
+            dtm.addRow(data);
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null, "Gagal Memuat Data Pegawai: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+}
+
 
     private void bersih() {
         jTextField1.setText(""); // Membersihkan input nama
@@ -455,6 +640,26 @@ public class PegawaiForm extends javax.swing.JFrame {
         jButton2.setEnabled(false); // Menonaktifkan tombol Edit
         jButton3.setEnabled(false); // Menonaktifkan tombol Hapus
     }
+    
+    private void isiComboBoxJabatan() {
+    try {
+        jComboBox1.removeAllItems();
+        jComboBox1.addItem("Silahkan Pilih"); // Tambahkan item default
+        
+        String query = "SELECT id_jabatan, nama_jabatan FROM jabatan";
+        pst = conn.prepareStatement(query);
+        ResultSet rs = pst.executeQuery();
+        
+        while (rs.next()) {
+            String item = rs.getInt("id_jabatan") + " - " + rs.getString("nama_jabatan");
+            jComboBox1.addItem(item);
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null, "Gagal Memuat Data Jabatan", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
+
 
     
 }
