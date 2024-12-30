@@ -261,33 +261,6 @@ public class PegawaiForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        try {
-//            if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
-//                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty()) {
-//                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Tambah Data", JOptionPane.WARNING_MESSAGE);
-//            } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
-//                JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
-//            } else {
-//                String queryTambah = "INSERT INTO pegawai (nama, tanggal_lahir, alamat, no_telepon) VALUES (?, ?, ?, ?)";
-//                pst = conn.prepareStatement(queryTambah);
-//
-//                pst.setString(1, jTextField1.getText());
-//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//                pst.setString(2, sdf.format(jDateChooser1.getDate()));
-//                pst.setString(3, jTextField2.getText());
-//                pst.setString(4, jTextField3.getText());
-//
-//                pst.executeUpdate();
-//                tampilData(); // Ganti dengan metode Anda untuk memuat ulang data di jTable1
-//                bersih();     // Ganti dengan metode Anda untuk membersihkan input
-//
-//                JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Ditambahkan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-//            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-//        }
-
         try {
             if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
                     || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() 
@@ -326,136 +299,86 @@ public class PegawaiForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//        try {
-//            if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
-//                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty()) {
-//                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Diisi", "Gagal Perbarui Data", JOptionPane.WARNING_MESSAGE);
-//            } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
-//                JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
-//            } else {
-//                String queryUpdate = "UPDATE pegawai SET nama=?, tanggal_lahir=?, alamat=?, no_telepon=? WHERE id_pegawai=?";
-//                pst = conn.prepareStatement(queryUpdate);
-//
-//                pst.setString(1, jTextField1.getText());
-//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//                pst.setString(2, sdf.format(jDateChooser1.getDate()));
-//                pst.setString(3, jTextField2.getText());
-//                pst.setString(4, jTextField3.getText());
-//                pst.setString(5, id); // Asumsikan variabel `id` berisi nilai `id_pegawai` yang dipilih
-//
-//                pst.executeUpdate();
-//                tampilData(); // Memuat ulang data di jTable1
-//                bersih();     // Membersihkan input
-//
-//                JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Diperbarui", "Sukses", JOptionPane.INFORMATION_MESSAGE);
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-//            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-//        }
+        try {
+            // Validasi jika data belum lengkap
+            if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
+                    || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() 
+                    || jComboBox1.getSelectedIndex() == 0) { // Validasi ComboBox jabatan
+                JOptionPane.showMessageDialog(null, "Data Pegawai Belum Lengkap", "Gagal Perbarui Data", JOptionPane.WARNING_MESSAGE);
+            } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
+                JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
+            } else {
+                // Mendapatkan ID Jabatan dari ComboBox1
+                String selectedJabatan = (String) jComboBox1.getSelectedItem();
+                String idJabatan = selectedJabatan.split(" - ")[0]; // Ambil ID jabatan dari format "ID - Nama"
 
-                                           
-                                          
-    try {
-        // Validasi jika data belum lengkap
-        if (jTextField1.getText().isEmpty() || jDateChooser1.getDate() == null 
-                || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() 
-                || jComboBox1.getSelectedIndex() == 0) { // Validasi ComboBox jabatan
-            JOptionPane.showMessageDialog(null, "Data Pegawai Belum Lengkap", "Gagal Perbarui Data", JOptionPane.WARNING_MESSAGE);
-        } else if (!jTextField3.getText().matches("\\d+")) { // Validasi nomor telepon hanya angka
-            JOptionPane.showMessageDialog(null, "Nomor Telepon hanya boleh berisi angka.", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
-        } else {
-            // Mendapatkan ID Jabatan dari ComboBox1
-            String selectedJabatan = (String) jComboBox1.getSelectedItem();
-            String idJabatan = selectedJabatan.split(" - ")[0]; // Ambil ID jabatan dari format "ID - Nama"
+                // Query untuk memperbarui data pegawai
+                String queryUpdate = "UPDATE pegawai SET nama=?, tanggal_lahir=?, alamat=?, no_telepon=?, id_jabatan=? WHERE id_pegawai=?";
+                pst = conn.prepareStatement(queryUpdate);
 
-            // Query untuk memperbarui data pegawai
-            String queryUpdate = "UPDATE pegawai SET nama=?, tanggal_lahir=?, alamat=?, no_telepon=?, id_jabatan=? WHERE id_pegawai=?";
-            pst = conn.prepareStatement(queryUpdate);
+                pst.setString(1, jTextField1.getText());
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                pst.setString(2, sdf.format(jDateChooser1.getDate()));
+                pst.setString(3, jTextField2.getText());
+                pst.setString(4, jTextField3.getText());
+                pst.setString(5, idJabatan); // ID Jabatan dari ComboBox
+                pst.setString(6, id);        // Asumsikan variabel `id` berisi nilai `id_pegawai` yang dipilih
 
-            pst.setString(1, jTextField1.getText());
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            pst.setString(2, sdf.format(jDateChooser1.getDate()));
-            pst.setString(3, jTextField2.getText());
-            pst.setString(4, jTextField3.getText());
-            pst.setString(5, idJabatan); // ID Jabatan dari ComboBox
-            pst.setString(6, id);        // Asumsikan variabel `id` berisi nilai `id_pegawai` yang dipilih
+                // Eksekusi query
+                pst.executeUpdate();
+                tampilData(); // Memuat ulang data di jTable1
+                bersih();     // Membersihkan input
+                jComboBox1.setSelectedIndex(0); // Kembali ke index 0 pada jComboBox1
 
-            // Eksekusi query
-            pst.executeUpdate();
-            tampilData(); // Memuat ulang data di jTable1
-            bersih();     // Membersihkan input
-            jComboBox1.setSelectedIndex(0); // Kembali ke index 0 pada jComboBox1
-
-            JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Diperbarui", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Data Pegawai Berhasil Diperbarui", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-    } catch (SQLException ex) {
-        Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-        JOptionPane.showMessageDialog(null, "Terjadi Kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-    }
-
-
-   
-
-
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
-//        int row = jTable2.getSelectedRow();
-//        id = jTable2.getValueAt(row, 0).toString(); // Mengambil ID Pegawai
-//        jTextField1.setText(jTable2.getValueAt(row, 1).toString()); // Mengisi Nama
-//        try {
-//            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(jTable2.getValueAt(row, 2).toString());
-//            jDateChooser1.setDate(date); // Mengisi Tanggal Lahir
-//        } catch (ParseException ex) {
-//            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-//        }
-//        jTextField2.setText(jTable2.getValueAt(row, 3).toString()); // Mengisi Alamat
-//        jTextField3.setText(jTable2.getValueAt(row, 4).toString()); // Mengisi No Telepon
-//
-//        jButton1.setEnabled(false); // Menonaktifkan tombol Tambah
-//        jButton2.setEnabled(true);  // Mengaktifkan tombol Edit
-//        jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
         int row = jTable2.getSelectedRow();
-id = jTable2.getValueAt(row, 0).toString(); // Mengambil ID Pegawai
-jTextField1.setText(jTable2.getValueAt(row, 1).toString()); // Mengisi Nama
+        id = jTable2.getValueAt(row, 0).toString(); // Mengambil ID Pegawai
+        jTextField1.setText(jTable2.getValueAt(row, 1).toString()); // Mengisi Nama
 
-try {
-    Date date = new SimpleDateFormat("yyyy-MM-dd").parse(jTable2.getValueAt(row, 2).toString());
-    jDateChooser1.setDate(date); // Mengisi Tanggal Lahir
-} catch (ParseException ex) {
-    Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-}
-
-jTextField2.setText(jTable2.getValueAt(row, 3).toString()); // Mengisi Alamat
-jTextField3.setText(jTable2.getValueAt(row, 4).toString()); // Mengisi No Telepon
-
-try {
-    // Query untuk mendapatkan ID Jabatan pegawai
-    String query = "SELECT id_jabatan FROM pegawai WHERE id_pegawai = ?";
-    pst = conn.prepareStatement(query);
-    pst.setString(1, id); // Menggunakan ID Pegawai yang diambil dari tabel
-    ResultSet rs = pst.executeQuery();
-
-    if (rs.next()) {
-        String idJabatan = rs.getString("id_jabatan");
-        for (int i = 0; i < jComboBox1.getItemCount(); i++) {
-            String item = jComboBox1.getItemAt(i);
-            if (item.startsWith(idJabatan + " - ")) { // Cocokkan ID Jabatan di ComboBox
-                jComboBox1.setSelectedIndex(i);
-                break;
-            }
+        try {
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(jTable2.getValueAt(row, 2).toString());
+            jDateChooser1.setDate(date); // Mengisi Tanggal Lahir
+        } catch (ParseException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
-    }
-} catch (SQLException ex) {
-    Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-    JOptionPane.showMessageDialog(null, "Gagal memuat data jabatan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-}
 
-// Mengatur tombol
-jButton1.setEnabled(false); // Menonaktifkan tombol Tambah
-jButton2.setEnabled(true);  // Mengaktifkan tombol Edit
-jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
+        jTextField2.setText(jTable2.getValueAt(row, 3).toString()); // Mengisi Alamat
+        jTextField3.setText(jTable2.getValueAt(row, 4).toString()); // Mengisi No Telepon
+
+        try {
+            // Query untuk mendapatkan ID Jabatan pegawai
+            String query = "SELECT id_jabatan FROM pegawai WHERE id_pegawai = ?";
+            pst = conn.prepareStatement(query);
+            pst.setString(1, id); // Menggunakan ID Pegawai yang diambil dari tabel
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                String idJabatan = rs.getString("id_jabatan");
+                for (int i = 0; i < jComboBox1.getItemCount(); i++) {
+                    String item = jComboBox1.getItemAt(i);
+                    if (item.startsWith(idJabatan + " - ")) { // Cocokkan ID Jabatan di ComboBox
+                        jComboBox1.setSelectedIndex(i);
+                        break;
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Gagal memuat data jabatan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        // Mengatur tombol
+        jButton1.setEnabled(false); // Menonaktifkan tombol Tambah
+        jButton2.setEnabled(true);  // Mengaktifkan tombol Edit
+        jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
 
     }//GEN-LAST:event_jTable2MouseClicked
 
@@ -551,40 +474,6 @@ jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 
-//    private void tampilData() {
-//        try {
-//            String[] judul = {"ID Pegawai", "Nama", "Tanggal Lahir", "Alamat", "No Telepon"};
-//            DefaultTableModel dtm = new DefaultTableModel(null, judul);
-//            jTable2.setModel(dtm);
-//            String sql = "SELECT * FROM pegawai";
-//
-//            if (!jTextField4.getText().isEmpty()) {
-//                sql = "SELECT * FROM pegawai WHERE nama LIKE ?";
-//            }
-//
-//            pst = conn.prepareStatement(sql);
-//
-//            if (!jTextField4.getText().isEmpty()) {
-//                pst.setString(1, "%" + jTextField4.getText() + "%");
-//            }
-//
-//            ResultSet rs = pst.executeQuery();
-//
-//            while (rs.next()) {
-//                String[] data = {
-//                    rs.getString("id_pegawai"),
-//                    rs.getString("nama"),
-//                    rs.getString("tanggal_lahir"),
-//                    rs.getString("alamat"),
-//                    rs.getString("no_telepon")
-//                };
-//                dtm.addRow(data);
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//    }
     
     private void tampilData() {
     try {
@@ -642,24 +531,22 @@ jButton3.setEnabled(true);  // Mengaktifkan tombol Hapus
     }
     
     private void isiComboBoxJabatan() {
-    try {
-        jComboBox1.removeAllItems();
-        jComboBox1.addItem("Silahkan Pilih"); // Tambahkan item default
-        
-        String query = "SELECT id_jabatan, nama_jabatan FROM jabatan";
-        pst = conn.prepareStatement(query);
-        ResultSet rs = pst.executeQuery();
-        
-        while (rs.next()) {
-            String item = rs.getInt("id_jabatan") + " - " + rs.getString("nama_jabatan");
-            jComboBox1.addItem(item);
+        try {
+            jComboBox1.removeAllItems();
+            jComboBox1.addItem("Silahkan Pilih"); // Tambahkan item default
+
+            String query = "SELECT id_jabatan, nama_jabatan FROM jabatan";
+            pst = conn.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String item = rs.getInt("id_jabatan") + " - " + rs.getString("nama_jabatan");
+                jComboBox1.addItem(item);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Gagal Memuat Data Jabatan", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    } catch (SQLException ex) {
-        Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-        JOptionPane.showMessageDialog(null, "Gagal Memuat Data Jabatan", "Error", JOptionPane.ERROR_MESSAGE);
     }
-}
-
-
     
 }
