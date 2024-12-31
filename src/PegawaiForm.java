@@ -524,6 +524,7 @@ public class PegawaiForm extends javax.swing.JFrame {
         jDateChooser1.setDate(null); // Membersihkan input tanggal lahir
         jTextField2.setText(""); // Membersihkan input alamat
         jTextField3.setText(""); // Membersihkan input no telepon
+        jComboBox1.setSelectedIndex(0); 
 
         jButton1.setEnabled(true); // Mengaktifkan tombol Tambah
         jButton2.setEnabled(false); // Menonaktifkan tombol Edit
