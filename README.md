@@ -7,16 +7,16 @@ Kelas  : REG PAGI 5B BJB<br>
 1. Bentuk ujian akhir semester (UAS) adalah tugas besar berupa pembuatan proyek aplikasi.
 2. Buat aplikasi java berbasis GUI yang mengakses database MySQL. Fitur utama dari aplikasi adalah kemampuan untuk CRUD (create, read (listing), update, delete) data dari database MySQL dan fitur transaksi serta reporting, Gunakan lebih dari satu tabel (Terdapat minimal 2 tabel master, Terdapat minimal 1 tabel transaksi, dan Terdapat mininal 2 laporan).
 3. Pilih aplikasi dari list di bawah (sesuaikan digit terakhir NPM) :
-    - 1) Aplikasi Penjualan Buku (1).
-    - 2) Aplikasi Pendaftaran Siswa (PPDB) (2).
-    - 3) Aplikasi Pengelolaan KRS.
-    - 4) Aplikasi Penjualan Tiket Pesawat.
-    - 5) Aplikasi Inventaris Aset.
-    - 6) Aplikasi Objek Wisata.
-    - 7) Aplikasi Rental Mobil.
-    - 8) Aplikasi Gudang.
-    - 9) Aplikasi Kepegawaian.
-    - 0) Aplikasi Penyewaan PC.
+    - Aplikasi Penjualan Buku (1).
+    - Aplikasi Pendaftaran Siswa (PPDB) (2).
+    - Aplikasi Pengelolaan KRS (3).
+    - Aplikasi Penjualan Tiket Pesawat (4).
+    - Aplikasi Inventaris Aset (5).
+    - Aplikasi Objek Wisata (6).
+    - Aplikasi Rental Mobil (7).
+    - Aplikasi Gudang (8).
+    - Aplikasi Kepegawaian (9).
+    - Aplikasi Penyewaan PC (0).
 4. Unggah source project netbeans dan file dump database MySQL (.sql) ke Github dengan format nama repository Nama-NPM-TB.
 5. Unggah video kalian mempresentasikan (demo) program tersebut dengan durasi maksimal 10 menit.
 6. Kirimkan tautan repository Github dan tautan video tersebut ke e-learning.
