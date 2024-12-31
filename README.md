@@ -27,9 +27,9 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
 # FITUR PADA APLIKASI YANG SAYA BUAT (APLIKASI KEPEGAWAIAN)
 - Pada menu utama terdapat 4 button yaitu Button Master Pegawai, Button Master Jabatan, Button Transaksi Absen, dan Button Laporan. Ketika button di tekan maka akan mengarah ke halaman yang ingin di pilih.
    - Button Master Pegawai.
-      - Ketika pengguna menekan Buttun Master Pegawai maka akan masuk ke halaman form pegawai.
+      - Ketika pengguna menekan Button Master Pegawai maka akan masuk ke halaman form pegawai.
       - Terdapat inputan nama, inputan tanggal lahir yang dapat langsung dipilih, inputan jabatan yang dapat dipilih sesuai yang telah di inputkan pada form jabatan, inputan No Telepon yang hanya dapat di isi dengan angka dengan maksimal 14 digit, dan inputan alamat.
-      - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan agar masuk ke tabel, kolom inputan akan otomatis kosong.
+      - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi semua, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan akan masuk ke tabel, kolom inputan akan otomatis kosong.
       - Ada button edit untuk melakukan perubahan data, dengan cara menekan salah satu data yang ingin dirubah pada tabel terlebih dahulu, data akan masuk kembali ke inputan dan lalukan perubahan.
       - Ada button hapus untuk menghapus data, dengan cara menekan salah satu data yang ada pada tabel terlebih dahulu.
       - Ada button bersih untuk membersihkan semua kolom inputan.
