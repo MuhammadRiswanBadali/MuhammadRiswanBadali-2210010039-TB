@@ -7,8 +7,8 @@ Kelas  : REG PAGI 5B BJB<br>
 1. Bentuk ujian akhir semester (UAS) adalah tugas besar berupa pembuatan proyek aplikasi.
 2. Buat aplikasi java berbasis GUI yang mengakses database MySQL. Fitur utama dari aplikasi adalah kemampuan untuk CRUD (create, read (listing), update, delete) data dari database MySQL dan fitur transaksi serta reporting, Gunakan lebih dari satu tabel (Terdapat minimal 2 tabel master, Terdapat minimal 1 tabel transaksi, dan Terdapat mininal 2 laporan).
 3. Pilih aplikasi dari list di bawah (sesuaikan digit terakhir NPM) :
-    - 1) Aplikasi Penjualan Buku.
-    - 2)Aplikasi Pendaftaran Siswa (PPDB).
+    - 1) Aplikasi Penjualan Buku (1).
+    - 2) Aplikasi Pendaftaran Siswa (PPDB) (2).
     - 3) Aplikasi Pengelolaan KRS.
     - 4) Aplikasi Penjualan Tiket Pesawat.
     - 5) Aplikasi Inventaris Aset.
