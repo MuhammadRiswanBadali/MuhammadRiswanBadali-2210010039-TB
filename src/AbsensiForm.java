@@ -280,7 +280,7 @@ public class AbsensiForm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             
-            if (jComboBox1.getSelectedIndex() == -1 || jDateChooser1.getDate() == null || jComboBox2.getSelectedIndex() == -1) {
+            if (jComboBox1.getSelectedIndex() == 0 || jDateChooser1.getDate() == null || jComboBox2.getSelectedIndex() == 0) {
                 JOptionPane.showMessageDialog(null, "Data Absensi Belum Lengkap", "Gagal Tambah Data", JOptionPane.WARNING_MESSAGE);
             } else {
                 
