@@ -38,7 +38,7 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Terdapat satu button lagi untuk kembali ke menu utama.
 - Form Master Jabatan
     - Ketika pengguna menekan Buttun Master Jabatan maka akan masuk ke form jabatan.
-    - Terdapat inputan nama jabatan dan gaji pokok.
+    - Terdapat inputan nama jabatan dan gaji pokok yg hanya dapat di isi dengan angka.
     - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi semua, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan akan masuk ke tabel, dan kolom inputan akan otomatis kosong.
     - Ada button edit untuk melakukan perubahan data, dengan cara menekan salah satu data yang ingin dirubah pada tabel terlebih dahulu, data akan masuk kembali ke inputan dan lalukan perubahan, muncul juga sebuah konfirmasi.
     - Ada button hapus untuk menghapus data, dengan cara menekan salah satu data yang ada pada tabel terlebih dahulu, muncul juga sebuah konfirmasi.
