@@ -48,7 +48,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Terdapat satu button lagi untuk kembali ke menu utama.
 - Form Transaksi Absensi
     - Ketika pengguna menekan Buttun Transaksi Absen maka akan masuk ke form absensi.
-    - Terdapatn inputan pilih pegawai yang dapat dipilih sesuai yang telah di inputkan pada form pegawai, inputan tanggal yang dapat langsung dipilih, dan terdapat inputan status kehadiran yang dapat dipilh (Hadir, Izin, Sakit).
+    - Terdapat inputan pilih pegawai yang dapat dipilih sesuai yang telah di inputkan pada form pegawai, inputan tanggal yang dapat langsung dipilih, dan terdapat inputan status kehadiran yang dapat dipilh (Hadir, Izin, Sakit).
     - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi semua, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan akan masuk ke tabel, dan kolom inputan akan otomatis kosong.
     - Ada button edit untuk melakukan perubahan data, dengan cara menekan salah satu data yang ingin dirubah pada tabel terlebih dahulu, data akan masuk kembali ke inputan dan lalukan perubahan muncul juga sebuah konfirmasi.
     - Ada button hapus untuk menghapus data, dengan cara menekan salah satu data yang ada pada tabel terlebih dahulu, muncul juga sebuah konfirmasi.
@@ -83,7 +83,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
      <img width="195" alt="image" src="https://github.com/user-attachments/assets/4a6610c1-e84d-474d-ae4b-687eaa14da1f" /><br>
 8. Tampilan melakukan pencarian.<br>
    <img width="698" alt="image" src="https://github.com/user-attachments/assets/846e03dc-30a8-4271-a8df-283631e66d3b" /><br>
-9. Tampilan setelah menekan button master jabatan.<br>
+9. Tampilan setelah menekan button Master Jabatan.<br>
    <img width="552" alt="image" src="https://github.com/user-attachments/assets/37186dd1-cd14-4a48-be05-a648c9aa4e84" /><br>
 10. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
     <img width="552" alt="image" src="https://github.com/user-attachments/assets/64be96f6-8356-432e-a531-66fc5c41f11e" /><br>
@@ -101,7 +101,16 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
       <img width="556" alt="14 1" src="https://github.com/user-attachments/assets/c019a8b7-ce2e-4d84-900c-fc1ce66a866a" /><br>
 15. Tampilan melakukan pencarian.<br>
     <img width="548" alt="image" src="https://github.com/user-attachments/assets/73541762-5693-457c-a3ff-81c2cba59111" /><br>
+16. Tampilan setelah menekan button Transaksi Absen.<br>
+    <img width="574" alt="image" src="https://github.com/user-attachments/assets/c36f2038-53b2-414a-9b78-2469022b7b25" /><br>
+17. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
+    <img width="569" alt="image" src="https://github.com/user-attachments/assets/8ce8dd80-19a5-43f4-a53e-a18e3572a907" /><br>
+18. Tampilan setelah menekan button tambah dengan semua inputan sudah terisi, dan lanjutkan menekan button ok.<br>
+    <img width="570" alt="image" src="https://github.com/user-attachments/assets/218c4057-5074-49fc-aeb8-a9c92a9fad81" />
 
+
+
+    
 
 
 
