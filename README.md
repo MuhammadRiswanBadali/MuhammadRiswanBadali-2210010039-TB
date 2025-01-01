@@ -65,12 +65,12 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Ada button Reset unutuk membersihkan inputan dan tabel. Juga menampilkan pesan berhasil melakukan reset setelah menekannya.
     - Ada button untuk kembali ke menu utama. 
 # TAMPILAN APLIKASI YANG DIBUAT (APLIKASI KEPEGAWAIAN)
-A. Tampilan awal aplikasi.<br>
+1. Tampilan awal aplikasi.<br>
    <img width="545" alt="image" src="https://github.com/user-attachments/assets/dbea08f5-295e-49f2-8c95-2cc050d60228" /><br>
-    1. Tampilan setelah menekan button master pegawai.<br>
-       <img width="698" alt="image" src="https://github.com/user-attachments/assets/d80d1651-ab58-4211-ba20-974515360b1c" /><br>
-    2. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
-       <img width="693" alt="image" src="https://github.com/user-attachments/assets/bf39e748-0746-4038-a037-de9042b3209b" /><br>
+2. Tampilan setelah menekan button master pegawai.<br>
+   <img width="698" alt="image" src="https://github.com/user-attachments/assets/d80d1651-ab58-4211-ba20-974515360b1c" /><br>
+3. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
+   <img width="693" alt="image" src="https://github.com/user-attachments/assets/bf39e748-0746-4038-a037-de9042b3209b" /><br>
 4. Tampilan setelah menekan button tambah dan berhasil.<br>
    <img width="694" alt="image" src="https://github.com/user-attachments/assets/24c20a3f-617d-4944-8710-a51801d96115" /><br>
 5. Tampilan Ketika memasukkan hurup pada inputan no telepon.<br>
@@ -86,7 +86,20 @@ A. Tampilan awal aplikasi.<br>
 9. Tampilan setelah menekan button master jabatan.<br>
    <img width="552" alt="image" src="https://github.com/user-attachments/assets/37186dd1-cd14-4a48-be05-a648c9aa4e84" /><br>
 10. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
-   <img width="552" alt="image" src="https://github.com/user-attachments/assets/64be96f6-8356-432e-a531-66fc5c41f11e" />
+    <img width="552" alt="image" src="https://github.com/user-attachments/assets/64be96f6-8356-432e-a531-66fc5c41f11e" /><br>
+11. Tampilan Ketika memasukkan hurup pada inputan gaji pokok.<br>
+    <img width="556" alt="image" src="https://github.com/user-attachments/assets/4d32d8e2-c783-47d2-b5cf-d88a34ad2ac5" /><br>
+12. Tampilan setelah menekan button tambah dan berhasil.<br>
+    <img width="553" alt="image" src="https://github.com/user-attachments/assets/c1ad860b-0821-4d24-9400-3658f50e130a" /><br>
+13. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
+    <img width="553" alt="13" src="https://github.com/user-attachments/assets/08251001-06d7-46a3-8a70-44e8500a395f" /><br>
+    - Dilanjutkan menekan konfimasi "yes".<br>
+      <img width="553" alt="13 1" src="https://github.com/user-attachments/assets/e081f1ba-3b47-4cb4-9004-de485ce26e88" /><br>
+14. Tampilan Setelah menekan button hapus.<br>
+    <img width="552" alt="14" src="https://github.com/user-attachments/assets/dddf62e4-efb1-45f0-ac8d-1cf72a0aae45" /><br>
+    - Dilanjutkan menekan konfimasi "yes" lalu "Ok".<br>
+      <img width="556" alt="14 1" src="https://github.com/user-attachments/assets/c019a8b7-ce2e-4d84-900c-fc1ce66a866a" /><br>
+
 
 
 
