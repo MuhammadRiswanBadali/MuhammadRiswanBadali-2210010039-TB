@@ -22,7 +22,7 @@ Kelas  : REG PAGI 5B BJB<br>
 6. Kirimkan tautan repository Github dan tautan video tersebut ke e-learning.
 
 # APLIKASI YANG SAYA BUAT
-dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
+Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
 
 # FITUR PADA APLIKASI YANG SAYA BUAT (APLIKASI KEPEGAWAIAN)
 - Pada menu utama terdapat 4 button yaitu Button Master Pegawai, Button Master Jabatan, Button Transaksi Absen, dan Button Laporan. Ketika button di tekan maka akan mengarah ke halaman yang ingin di pilih.
@@ -64,3 +64,25 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Ada satu tabel untuk menampilkan segala informasi ketika button Periksa Laporan Absensi Bulanan dan button Laporan Pegawai dan Gaji ditekan.
     - Ada button Reset unutuk membersihkan inputan dan tabel. Juga menampilkan pesan berhasil melakukan reset setelah menekannya.
     - Ada button untuk kembali ke menu utama. 
+# TAMPILAN APLIKASI YANG DIBUAT (APLIKASI KEPEGAWAIAN)
+1. Tampilan awal aplikasi.<br>
+   <img width="545" alt="image" src="https://github.com/user-attachments/assets/dbea08f5-295e-49f2-8c95-2cc050d60228" /><br>
+2. Tampilan setelah menekan button master pegawai.<br>
+   <img width="698" alt="image" src="https://github.com/user-attachments/assets/d80d1651-ab58-4211-ba20-974515360b1c" /><br>
+3. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
+   <img width="693" alt="image" src="https://github.com/user-attachments/assets/bf39e748-0746-4038-a037-de9042b3209b" /><br>
+4. Tampilan setelah menekan button tambah dan berhasil.<br>
+   <img width="694" alt="image" src="https://github.com/user-attachments/assets/24c20a3f-617d-4944-8710-a51801d96115" /><br>
+5. Tampilan Ketika memasukkan hurup pada inputan no telepon.<br>
+   <img width="695" alt="image" src="https://github.com/user-attachments/assets/c39a2326-7017-4893-8f88-efb9dbbb25bd" /><br>
+6. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
+   <img width="697" alt="image" src="https://github.com/user-attachments/assets/2978d3dd-c614-491d-b039-1ced46039fe9" /><br>
+7. Tampilan Setelah menekan button hapus.<br>
+   <img width="697" alt="image" src="https://github.com/user-attachments/assets/fdc2fb30-458e-4508-83b1-82dd4539939b" /><br>
+   - Dilanjutkan menekan konfimasi "yes".<br>
+     <img width="195" alt="image" src="https://github.com/user-attachments/assets/4a6610c1-e84d-474d-ae4b-687eaa14da1f" /><br>
+8. Tampilan melakukan pencarian.<br>
+   <img width="698" alt="image" src="https://github.com/user-attachments/assets/846e03dc-30a8-4271-a8df-283631e66d3b" /><br>
+
+
+   
