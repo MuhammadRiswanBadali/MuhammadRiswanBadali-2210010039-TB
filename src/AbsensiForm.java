@@ -226,19 +226,16 @@ public class AbsensiForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try {
-            
+        try {            
             int selectedRow = jTable1.getSelectedRow();
             if (selectedRow == -1) {
                 JOptionPane.showMessageDialog(null, "Pilih data yang ingin diedit dari tabel!", "Peringatan", JOptionPane.WARNING_MESSAGE);
                 return;
             }  
+       
+            String idAbsensi = jTable1.getValueAt(selectedRow, 0).toString();              
             
-            
-            String idAbsensi = jTable1.getValueAt(selectedRow, 0).toString();   
-            
-            
-            if (jComboBox1.getSelectedItem() == null || jDateChooser1.getDate() == null || jComboBox2.getSelectedItem() == null) {
+            if (jComboBox1.getSelectedIndex() == 0 || jDateChooser1.getDate() == null || jComboBox2.getSelectedIndex() == 0) {
                 JOptionPane.showMessageDialog(null, "Semua field harus diisi!", "Validasi Gagal", JOptionPane.WARNING_MESSAGE);
                 return;
             }
