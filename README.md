@@ -46,8 +46,8 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Terdapat inputan untuk mecari jabatan berdasarkan nama jabatan, dengan cara langsung saja menginputkan nama jabatan yang akan dicari maka langsung tampil pada tabel.
     - Terdapat satu tabel untuk menampung segala inputan.
     - Terdapat satu button lagi untuk kembali ke menu utama.
-- Form Transaksi Absen
-    - Ketika pengguna menekan Buttun Transaksi Absen maka akan masuk ke form absen.
+- Form Transaksi Absensi
+    - Ketika pengguna menekan Buttun Transaksi Absen maka akan masuk ke form absensi.
     - Terdapatn inputan pilih pegawai yang dapat dipilih sesuai yang telah di inputkan pada form pegawai, inputan tanggal yang dapat langsung dipilih, dan terdapat inputan status kehadiran yang dapat dipilh (Hadir, Izin, Sakit).
     - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi semua, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan akan masuk ke tabel, dan kolom inputan akan otomatis kosong.
     - Ada button edit untuk melakukan perubahan data, dengan cara menekan salah satu data yang ingin dirubah pada tabel terlebih dahulu, data akan masuk kembali ke inputan dan lalukan perubahan muncul juga sebuah konfirmasi.
@@ -59,8 +59,8 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
 - Form Laporan
     - Ketika pengguna menekan Button Laporan maka akan masuk ke form laporan.
     - Terdapat panel absensi yang mana didalamnya ada inputan bulan yang dapat dipilih langsung dan inputan tahun yang dapat dipilih langsung juga.
-    - Ada button Periksa Laporan Absensi Bulanan, ketika ditekan maka akan menampilkan id pegawai, nama, total kehadiran, total izin, dan total sakit pada tabel. yang mana ketika di tekan tetapi inputan masih kosong maka akan menampilakn sebuah pesan.
-    - Terdapat panel pegawai dan gaji yang mana didalamnya ada button Laporan Pegawai dan Gaji, Ketika ditekan maka anakan menampilkan Nama pegawai, Nama jabatan, dan gaji pokok pada tabel.
+    - Ada button Periksa Laporan Absensi Bulanan, ketika ditekan maka akan menampilkan id pegawai, nama, total kehadiran, total izin, dan total sakit pada tabel. Ketika button di tekan tetapi inputan masih kosong maka akan menampilakn sebuah pesan.
+    - Terdapat panel pegawai dan gaji, yang mana didalamnya ada button Laporan Pegawai dan Gaji, Ketika ditekan maka anakan menampilkan Nama pegawai, Nama jabatan, dan gaji pokok pada tabel.
     - Ada satu tabel untuk menampilkan segala informasi ketika button Periksa Laporan Absensi Bulanan dan button Laporan Pegawai dan Gaji ditekan.
     - Ada button Reset unutuk membersihkan inputan dan tabel. Juga menampilkan pesan berhasil melakukan reset setelah menekannya.
     - Ada button untuk kembali ke menu utama. 
