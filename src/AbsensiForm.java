@@ -124,6 +124,12 @@ public class AbsensiForm extends javax.swing.JFrame {
 
         jLabel4.setText("Cari pegawai berdasarkan nama pegawai : ");
 
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
+
         jButton5.setText("Kembali ke menu utama");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -380,6 +386,10 @@ public class AbsensiForm extends javax.swing.JFrame {
         this.setVisible(false); 
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        tampilData();
+    }//GEN-LAST:event_jTextField1KeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -443,29 +453,28 @@ public class AbsensiForm extends javax.swing.JFrame {
             // Query untuk mendapatkan data absensi dengan relasi ke tabel pegawai
             String sql = "SELECT a.id_absensi, a.id_pegawai, p.nama, a.tanggal_absen, a.status " +
                          "FROM absensi a JOIN pegawai p ON a.id_pegawai = p.id_pegawai";
+            
+            if (!jTextField1.getText().isEmpty()) {
+                sql += " WHERE p.nama LIKE ?";
+            }
+            
             pst = conn.prepareStatement(sql);
+            
+            if (!jTextField1.getText().isEmpty()) {
+                pst.setString(1, "%" + jTextField1.getText() + "%");
+            }
+            
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                String[] data = {
-                    rs.getString("id_absensi"),
-                    rs.getString("id_pegawai"),
-                    rs.getString("nama"),
-                    rs.getString("tanggal_absen"),
-                    rs.getString("status")
-                };
-                dtm.addRow(data);
-            }
+                String idAbsensi = rs.getString("id_absensi");
+                String idPegawai = rs.getString("id_pegawai");
+                String namaPegawai = rs.getString("nama");
+                String tanggalAbsen = rs.getString("tanggal_absen");
+                String status = rs.getString("status");
 
-            
-            String filterText = jTextField1.getText().trim();
-            if (!filterText.isEmpty()) {
-                for (int i = dtm.getRowCount() - 1; i >= 0; i--) {
-                    String namaPegawai = dtm.getValueAt(i, 2).toString();
-                    if (!namaPegawai.toLowerCase().contains(filterText.toLowerCase())) {
-                        dtm.removeRow(i);
-                    }
-                }
+                String[] data = {idAbsensi, idPegawai, namaPegawai, tanggalAbsen, status};
+                dtm.addRow(data);
             }
 
         } catch (SQLException ex) {
