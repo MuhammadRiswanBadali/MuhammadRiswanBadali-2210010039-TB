@@ -67,5 +67,26 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
 # TAMPILAN APLIKASI YANG DIBUAT (APLIKASI KEPEGAWAIAN)
 1. Tampilan awal aplikasi.<br>
    <img width="545" alt="image" src="https://github.com/user-attachments/assets/dbea08f5-295e-49f2-8c95-2cc050d60228" /><br>
+2. Tampilan setelah menekan button master pegawai.<br>
+   <img width="698" alt="image" src="https://github.com/user-attachments/assets/d80d1651-ab58-4211-ba20-974515360b1c" /><br>
+3. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
+   <img width="693" alt="image" src="https://github.com/user-attachments/assets/bf39e748-0746-4038-a037-de9042b3209b" /><br>
+4. Tampilan setelah menekan button tambah dan berhasil.<br>
+   <img width="694" alt="image" src="https://github.com/user-attachments/assets/24c20a3f-617d-4944-8710-a51801d96115" /><br>
+5. Tampilan Ketika memasukkan hurup pada inputan no telepon.<br>
+   <img width="695" alt="image" src="https://github.com/user-attachments/assets/c39a2326-7017-4893-8f88-efb9dbbb25bd" /><br>
+6. Tampilan Setelah melakukan perubahan.<br>
+   <img width="697" alt="image" src="https://github.com/user-attachments/assets/2978d3dd-c614-491d-b039-1ced46039fe9" /><br>
+7. Tampilan Setelah menekan button hapus.<br>
+   <img width="697" alt="image" src="https://github.com/user-attachments/assets/fdc2fb30-458e-4508-83b1-82dd4539939b" /><br>
+   - Dilanjutkan menekan konfimasi "yes".<br>
+     <img width="195" alt="image" src="https://github.com/user-attachments/assets/4a6610c1-e84d-474d-ae4b-687eaa14da1f" /><br>
+8. 
+
+   
+   
+
+
+ 
 
    
