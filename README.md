@@ -22,7 +22,7 @@ Kelas  : REG PAGI 5B BJB<br>
 6. Kirimkan tautan repository Github dan tautan video tersebut ke e-learning.
 
 # APLIKASI YANG SAYA BUAT
-dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
+Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
 
 # FITUR PADA APLIKASI YANG SAYA BUAT (APLIKASI KEPEGAWAIAN)
 - Pada menu utama terdapat 4 button yaitu Button Master Pegawai, Button Master Jabatan, Button Transaksi Absen, dan Button Laporan. Ketika button di tekan maka akan mengarah ke halaman yang ingin di pilih.
@@ -75,7 +75,7 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
    <img width="694" alt="image" src="https://github.com/user-attachments/assets/24c20a3f-617d-4944-8710-a51801d96115" /><br>
 5. Tampilan Ketika memasukkan hurup pada inputan no telepon.<br>
    <img width="695" alt="image" src="https://github.com/user-attachments/assets/c39a2326-7017-4893-8f88-efb9dbbb25bd" /><br>
-6. Tampilan Setelah melakukan perubahan.<br>
+6. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/2978d3dd-c614-491d-b039-1ced46039fe9" /><br>
 7. Tampilan Setelah menekan button hapus.<br>
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/fdc2fb30-458e-4508-83b1-82dd4539939b" /><br>
