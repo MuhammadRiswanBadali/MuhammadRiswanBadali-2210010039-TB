@@ -79,7 +79,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/2978d3dd-c614-491d-b039-1ced46039fe9" /><br>
 7. Tampilan Setelah menekan button hapus.<br>
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/fdc2fb30-458e-4508-83b1-82dd4539939b" /><br>
-   - Dilanjutkan menekan konfimasi "yes" lalu "Ok".<br>
+   - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terhapus pada tabel.<br> 
      <img width="195" alt="image" src="https://github.com/user-attachments/assets/4a6610c1-e84d-474d-ae4b-687eaa14da1f" /><br>
 8. Tampilan melakukan pencarian.<br>
    <img width="698" alt="image" src="https://github.com/user-attachments/assets/846e03dc-30a8-4271-a8df-283631e66d3b" /><br>
@@ -93,11 +93,11 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     <img width="553" alt="image" src="https://github.com/user-attachments/assets/c1ad860b-0821-4d24-9400-3658f50e130a" /><br>
 13. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
     <img width="553" alt="13" src="https://github.com/user-attachments/assets/08251001-06d7-46a3-8a70-44e8500a395f" /><br>
-    - Dilanjutkan menekan konfimasi "yes" lalu "Ok".<br>
+    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terupdate otomatis pada tabel.<br>
       <img width="553" alt="13 1" src="https://github.com/user-attachments/assets/e081f1ba-3b47-4cb4-9004-de485ce26e88" /><br>
 14. Tampilan Setelah menekan button hapus.<br>
     <img width="552" alt="14" src="https://github.com/user-attachments/assets/dddf62e4-efb1-45f0-ac8d-1cf72a0aae45" /><br>
-    - Dilanjutkan menekan konfimasi "yes" lalu "Ok".<br>
+    -Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terhapus pada tabel.<br> 
       <img width="556" alt="14 1" src="https://github.com/user-attachments/assets/c019a8b7-ce2e-4d84-900c-fc1ce66a866a" /><br>
 15. Tampilan melakukan pencarian.<br>
     <img width="548" alt="image" src="https://github.com/user-attachments/assets/73541762-5693-457c-a3ff-81c2cba59111" /><br>
@@ -105,8 +105,22 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     <img width="574" alt="image" src="https://github.com/user-attachments/assets/c36f2038-53b2-414a-9b78-2469022b7b25" /><br>
 17. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
     <img width="569" alt="image" src="https://github.com/user-attachments/assets/8ce8dd80-19a5-43f4-a53e-a18e3572a907" /><br>
-18. Tampilan setelah menekan button tambah dengan semua inputan sudah terisi, dan lanjutkan menekan button ok.<br>
-    <img width="570" alt="image" src="https://github.com/user-attachments/assets/218c4057-5074-49fc-aeb8-a9c92a9fad81" />
+18. Tampilan setelah menekan button tambah dengan semua inputan sudah terisi, dan lanjutkan menekan button ok, maka data akan masuk ke tabel.<br>
+    <img width="570" alt="image" src="https://github.com/user-attachments/assets/218c4057-5074-49fc-aeb8-a9c92a9fad81" /><br>
+19. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
+    <img width="569" alt="19" src="https://github.com/user-attachments/assets/44a809fa-b1eb-4d50-aa51-09a111250a87" /><br>
+    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terupdate otomatis pada tabel.<br>
+    <img width="572" alt="19 1" src="https://github.com/user-attachments/assets/dfba8d3e-e067-4755-9bd1-1d233fb9f326" /><br>
+20. Tampilan Setelah menekan button hapus.<br>
+    <img width="572" alt="20" src="https://github.com/user-attachments/assets/25eb65a2-c960-4cbc-a572-591146a11372" /><br>
+    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terhapus pada tabel.<br>
+    <img width="571" alt="20 1" src="https://github.com/user-attachments/assets/b39343d8-f2e6-421b-9c65-7526e8df3650" /><br>
+21. Tampilan melakukan pencarian.<br>
+    <img width="572" alt="image" src="https://github.com/user-attachments/assets/ceda7cc6-f724-457d-b733-9b0399e43cf0" /><br>
+22. Tampilan setelah menekan button Laporan.<br>
+    <img width="587" alt="image" src="https://github.com/user-attachments/assets/8652977a-ead8-4a4b-a84e-291244cc51fc" /><br>
+
+
 
 
 
