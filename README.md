@@ -79,7 +79,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/2978d3dd-c614-491d-b039-1ced46039fe9" /><br>
 7. Tampilan Setelah menekan button hapus.<br>
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/fdc2fb30-458e-4508-83b1-82dd4539939b" /><br>
-   - Dilanjutkan menekan konfimasi "yes".<br>
+   - Dilanjutkan menekan konfimasi "yes" lalu "Ok".<br>
      <img width="195" alt="image" src="https://github.com/user-attachments/assets/4a6610c1-e84d-474d-ae4b-687eaa14da1f" /><br>
 8. Tampilan melakukan pencarian.<br>
    <img width="698" alt="image" src="https://github.com/user-attachments/assets/846e03dc-30a8-4271-a8df-283631e66d3b" /><br>
@@ -93,12 +93,15 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     <img width="553" alt="image" src="https://github.com/user-attachments/assets/c1ad860b-0821-4d24-9400-3658f50e130a" /><br>
 13. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
     <img width="553" alt="13" src="https://github.com/user-attachments/assets/08251001-06d7-46a3-8a70-44e8500a395f" /><br>
-    - Dilanjutkan menekan konfimasi "yes".<br>
+    - Dilanjutkan menekan konfimasi "yes" lalu "Ok".<br>
       <img width="553" alt="13 1" src="https://github.com/user-attachments/assets/e081f1ba-3b47-4cb4-9004-de485ce26e88" /><br>
 14. Tampilan Setelah menekan button hapus.<br>
     <img width="552" alt="14" src="https://github.com/user-attachments/assets/dddf62e4-efb1-45f0-ac8d-1cf72a0aae45" /><br>
     - Dilanjutkan menekan konfimasi "yes" lalu "Ok".<br>
       <img width="556" alt="14 1" src="https://github.com/user-attachments/assets/c019a8b7-ce2e-4d84-900c-fc1ce66a866a" /><br>
+15. Tampilan melakukan pencarian.<br>
+    <img width="548" alt="image" src="https://github.com/user-attachments/assets/73541762-5693-457c-a3ff-81c2cba59111" /><br>
+
 
 
 
