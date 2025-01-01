@@ -26,17 +26,41 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
 
 # FITUR PADA APLIKASI YANG SAYA BUAT (APLIKASI KEPEGAWAIAN)
 - Pada menu utama terdapat 4 button yaitu Button Master Pegawai, Button Master Jabatan, Button Transaksi Absen, dan Button Laporan. Ketika button di tekan maka akan mengarah ke halaman yang ingin di pilih.
-   - Button Master Pegawai.
-      - Ketika pengguna menekan Button Master Pegawai maka akan masuk ke halaman form pegawai.
-      - Terdapat inputan nama, inputan tanggal lahir yang dapat langsung dipilih, inputan jabatan yang dapat dipilih sesuai yang telah di inputkan pada form jabatan, inputan No Telepon yang hanya dapat di isi dengan angka dengan maksimal 14 digit, dan inputan alamat.
-      - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi semua, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan akan masuk ke tabel, kolom inputan akan otomatis kosong.
-      - Ada button edit untuk melakukan perubahan data, dengan cara menekan salah satu data yang ingin dirubah pada tabel terlebih dahulu, data akan masuk kembali ke inputan dan lalukan perubahan.
-      - Ada button hapus untuk menghapus data, dengan cara menekan salah satu data yang ada pada tabel terlebih dahulu.
-      - Ada button bersih untuk membersihkan semua kolom inputan.
-      - Terdapat inputan untuk mecari pegawai berdasarkan nama pegawai, dengan cara langsung saja menginputkan nama yang akan dicari maka langsung tampil pada tabel.
-      - Terdapat satu tabel untuk menampung segala inputan.
-      - Terdapat satu button lagi untuk kembali ke menu utama.
-   - Button Master Jabatan
-      - Ketika pengguna menekan Buttun Master Jabatan maka akan masuk ke halaman form jabatan.
-      -   
-
+- Form Master Pegawai.
+    - Ketika pengguna menekan Button Master Pegawai maka akan masuk ke form pegawai.
+    - Terdapat inputan nama, inputan tanggal lahir yang dapat langsung dipilih, inputan jabatan yang dapat dipilih sesuai yang telah di inputkan pada form jabatan, inputan No Telepon yang hanya dapat di isi dengan angka dengan maksimal 14 digit, dan inputan alamat.
+    - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi semua, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan akan masuk ke tabel, dan kolom inputan akan otomatis kosong.
+    - Ada button edit untuk melakukan perubahan data, dengan cara menekan salah satu data yang ingin dirubah pada tabel terlebih dahulu, data akan masuk kembali ke inputan dan lalukan perubahan, muncul juga sebuah konfirmasi.
+    - Ada button hapus untuk menghapus data, dengan cara menekan salah satu data yang ada pada tabel terlebih dahulu, muncul juga sebuah konfirmasi.
+    - Ada button bersih untuk membersihkan semua kolom inputan.
+    - Terdapat inputan untuk mecari pegawai berdasarkan nama pegawai, dengan cara langsung saja menginputkan nama yang akan dicari maka langsung tampil pada tabel.
+    - Terdapat satu tabel untuk menampung segala inputan.
+    - Terdapat satu button lagi untuk kembali ke menu utama.
+- Form Master Jabatan
+    - Ketika pengguna menekan Buttun Master Jabatan maka akan masuk ke form jabatan.
+    - Terdapat inputan nama jabatan dan gaji pokok.
+    - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi semua, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan akan masuk ke tabel, dan kolom inputan akan otomatis kosong.
+    - Ada button edit untuk melakukan perubahan data, dengan cara menekan salah satu data yang ingin dirubah pada tabel terlebih dahulu, data akan masuk kembali ke inputan dan lalukan perubahan, muncul juga sebuah konfirmasi.
+    - Ada button hapus untuk menghapus data, dengan cara menekan salah satu data yang ada pada tabel terlebih dahulu, muncul juga sebuah konfirmasi.
+    - Ada button bersih untuk membersihkan semua kolom inputan.
+    - Terdapat inputan untuk mecari jabatan berdasarkan nama jabatan, dengan cara langsung saja menginputkan nama jabatan yang akan dicari maka langsung tampil pada tabel.
+    - Terdapat satu tabel untuk menampung segala inputan.
+    - Terdapat satu button lagi untuk kembali ke menu utama.
+- Form Transaksi Absen
+    - Ketika pengguna menekan Buttun Transaksi Absen maka akan masuk ke form absen.
+    - Terdapatn inputan pilih pegawai yang dapat dipilih sesuai yang telah di inputkan pada form pegawai, inputan tanggal yang dapat langsung dipilih, dan terdapat inputan status kehadiran yang dapat dipilh (Hadir, Izin, Sakit).
+    - Ada button tambah yang mana ketika di tekan maka semua inputan harus terisi semua, jika tidak maka akan muncul sebuah peringatan. Setelah inputan terisi semua lalu menekan button tambah maka muncul pesan sukses, dan segala inputan akan masuk ke tabel, dan kolom inputan akan otomatis kosong.
+    - Ada button edit untuk melakukan perubahan data, dengan cara menekan salah satu data yang ingin dirubah pada tabel terlebih dahulu, data akan masuk kembali ke inputan dan lalukan perubahan muncul juga sebuah konfirmasi.
+    - Ada button hapus untuk menghapus data, dengan cara menekan salah satu data yang ada pada tabel terlebih dahulu, muncul juga sebuah konfirmasi.
+    - Ada button bersih untuk membersihkan semua kolom inputan.
+    - Terdapat inputan untuk mecari pegawai berdasarkan nama pegawai yang ada pada tabel form absensi, dengan cara langsung saja menginputkan nama pegawai yang akan dicari maka langsung tampil pada tabel.
+    - Terdapat satu tabel untuk menampung segala inputan.
+    - Terdapat satu button lagi untuk kembali ke menu utama.
+- Form Laporan
+    - Ketika pengguna menekan Button Laporan maka akan masuk ke form laporan.
+    - Terdapat panel absensi yang mana didalamnya ada inputan bulan yang dapat dipilih langsung dan inputan tahun yang dapat dipilih langsung juga.
+    - Ada button Periksa Laporan Absensi Bulanan, ketika ditekan maka akan menampilkan id pegawai, nama, total kehadiran, total izin, dan total sakit pada tabel. yang mana ketika di tekan tetapi inputan masih kosong maka akan menampilakn sebuah pesan.
+    - Terdapat panel pegawai dan gaji yang mana didalamnya ada button Laporan Pegawai dan Gaji, Ketika ditekan maka anakan menampilkan Nama pegawai, Nama jabatan, dan gaji pokok pada tabel.
+    - Ada satu tabel untuk menampilkan segala informasi ketika button Periksa Laporan Absensi Bulanan dan button Laporan Pegawai dan Gaji ditekan.
+    - Ada button Reset unutuk membersihkan inputan dan tabel. Juga menampilkan pesan berhasil melakukan reset setelah menekannya.
+    - Ada button untuk kembali ke menu utama. 
