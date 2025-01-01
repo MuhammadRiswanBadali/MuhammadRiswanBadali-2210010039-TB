@@ -81,12 +81,8 @@ dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/fdc2fb30-458e-4508-83b1-82dd4539939b" /><br>
    - Dilanjutkan menekan konfimasi "yes".<br>
      <img width="195" alt="image" src="https://github.com/user-attachments/assets/4a6610c1-e84d-474d-ae4b-687eaa14da1f" /><br>
-8. 
+8. Tampilan melakukan pencarian.<br>
+   <img width="698" alt="image" src="https://github.com/user-attachments/assets/846e03dc-30a8-4271-a8df-283631e66d3b" /><br>
 
-   
-   
-
-
- 
 
    
