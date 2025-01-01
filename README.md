@@ -119,15 +119,11 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     <img width="572" alt="image" src="https://github.com/user-attachments/assets/ceda7cc6-f724-457d-b733-9b0399e43cf0" /><br>
 22. Tampilan setelah menekan button Laporan.<br>
     <img width="587" alt="image" src="https://github.com/user-attachments/assets/8652977a-ead8-4a4b-a84e-291244cc51fc" /><br>
-
-
-
-
-
-    
-
-
-
-
-
-   
+23. Tampilan setelah memilih periode bulan dan tahun, dilanjutkan menekan button "Periksa Laporan Absensi Bulanan".<br>
+    <img width="586" alt="image" src="https://github.com/user-attachments/assets/a768f2ce-9be4-4a44-a649-a9baeaf450fc" /><br>
+    - <img width="586" alt="image" src="https://github.com/user-attachments/assets/76371fcc-e0b1-4629-96a4-13ae7e8a170d" /><br>
+24. Tampilan setelah menekan button Reset.<br> 
+    <img width="585" alt="image" src="https://github.com/user-attachments/assets/23b43057-4bd5-4354-960e-8b7669edddcb" /><br>
+25. Tampilan setelah menekan button "Laporan Pegawai dan Gaji".<br>
+    <img width="584" alt="image" src="https://github.com/user-attachments/assets/387302f6-cdb8-45ff-a2c3-11e2ce1d090d" /><br>
+    - <img width="586" alt="image" src="https://github.com/user-attachments/assets/c8463b5f-0ed8-483f-bec2-88c30ee220ce" /><br>
