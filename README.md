@@ -65,12 +65,12 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Ada button Reset unutuk membersihkan inputan dan tabel. Juga menampilkan pesan berhasil melakukan reset setelah menekannya.
     - Ada button untuk kembali ke menu utama. 
 # TAMPILAN APLIKASI YANG DIBUAT (APLIKASI KEPEGAWAIAN)
-1. Tampilan awal aplikasi.<br>
+A. Tampilan awal aplikasi.<br>
    <img width="545" alt="image" src="https://github.com/user-attachments/assets/dbea08f5-295e-49f2-8c95-2cc050d60228" /><br>
-2. Tampilan setelah menekan button master pegawai.<br>
-   <img width="698" alt="image" src="https://github.com/user-attachments/assets/d80d1651-ab58-4211-ba20-974515360b1c" /><br>
-3. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
-   <img width="693" alt="image" src="https://github.com/user-attachments/assets/bf39e748-0746-4038-a037-de9042b3209b" /><br>
+    1. Tampilan setelah menekan button master pegawai.<br>
+       <img width="698" alt="image" src="https://github.com/user-attachments/assets/d80d1651-ab58-4211-ba20-974515360b1c" /><br>
+    2. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
+       <img width="693" alt="image" src="https://github.com/user-attachments/assets/bf39e748-0746-4038-a037-de9042b3209b" /><br>
 4. Tampilan setelah menekan button tambah dan berhasil.<br>
    <img width="694" alt="image" src="https://github.com/user-attachments/assets/24c20a3f-617d-4944-8710-a51801d96115" /><br>
 5. Tampilan Ketika memasukkan hurup pada inputan no telepon.<br>
