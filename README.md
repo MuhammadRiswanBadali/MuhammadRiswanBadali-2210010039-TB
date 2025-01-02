@@ -75,7 +75,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
    <img width="694" alt="image" src="https://github.com/user-attachments/assets/24c20a3f-617d-4944-8710-a51801d96115" /><br>
 5. Tampilan Ketika memasukkan hurup pada inputan no telepon.<br>
    <img width="695" alt="image" src="https://github.com/user-attachments/assets/c39a2326-7017-4893-8f88-efb9dbbb25bd" /><br>
-6. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
+6. Tampilan Setelah melakukan perubahan pada ID Pegawai 18 (Nabila) dengan menekan button edit.<br>
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/2978d3dd-c614-491d-b039-1ced46039fe9" /><br>
 7. Tampilan Setelah menekan button hapus.<br>
    <img width="697" alt="image" src="https://github.com/user-attachments/assets/fdc2fb30-458e-4508-83b1-82dd4539939b" /><br>
