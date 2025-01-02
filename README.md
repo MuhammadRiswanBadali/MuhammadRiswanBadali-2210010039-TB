@@ -109,7 +109,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     <img width="570" alt="image" src="https://github.com/user-attachments/assets/218c4057-5074-49fc-aeb8-a9c92a9fad81" /><br>
 19. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
     <img width="569" alt="19" src="https://github.com/user-attachments/assets/44a809fa-b1eb-4d50-aa51-09a111250a87" /><br>
-    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terupdate otomatis pada tabel.<br>
+    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terupdate otomatis pada tabel dan inputan menjadi kosong.<br>
     <img width="572" alt="19 1" src="https://github.com/user-attachments/assets/dfba8d3e-e067-4755-9bd1-1d233fb9f326" /><br>
 20. Tampilan Setelah menekan button hapus.<br>
     <img width="572" alt="20" src="https://github.com/user-attachments/assets/25eb65a2-c960-4cbc-a572-591146a11372" /><br>
