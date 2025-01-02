@@ -99,6 +99,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     <img width="552" alt="14" src="https://github.com/user-attachments/assets/dddf62e4-efb1-45f0-ac8d-1cf72a0aae45" /><br>
     - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terhapus pada tabel.<br> 
       <img width="556" alt="14 1" src="https://github.com/user-attachments/assets/c019a8b7-ce2e-4d84-900c-fc1ce66a866a" /><br>
+      <img width="553" alt="image" src="https://github.com/user-attachments/assets/fd46f72f-4c77-4cd3-8714-c76710021047" /><br>
 15. Tampilan melakukan pencarian.<br>
     <img width="548" alt="image" src="https://github.com/user-attachments/assets/73541762-5693-457c-a3ff-81c2cba59111" /><br>
 16. Tampilan setelah menekan button Transaksi Absen.<br>
