@@ -119,6 +119,8 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     <img width="572" alt="image" src="https://github.com/user-attachments/assets/ceda7cc6-f724-457d-b733-9b0399e43cf0" /><br>
 22. Tampilan setelah menekan button Laporan.<br>
     <img width="587" alt="image" src="https://github.com/user-attachments/assets/8652977a-ead8-4a4b-a84e-291244cc51fc" /><br>
+    - Tampilan menekan button "Periksa Laporan Absensi Bulanan" tetapi belum memilih bulan dan tahun.<br>
+      <img width="584" alt="image" src="https://github.com/user-attachments/assets/a7a0f13c-4f94-4569-84cb-56e75b00dc7f" /><br>
 23. Tampilan setelah memilih periode bulan dan tahun, dilanjutkan menekan button "Periksa Laporan Absensi Bulanan".<br>
     <img width="586" alt="image" src="https://github.com/user-attachments/assets/a768f2ce-9be4-4a44-a649-a9baeaf450fc" /><br>
     <img width="586" alt="image" src="https://github.com/user-attachments/assets/76371fcc-e0b1-4629-96a4-13ae7e8a170d" /><br>
