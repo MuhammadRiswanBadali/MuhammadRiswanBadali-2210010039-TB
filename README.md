@@ -102,7 +102,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
 15. Tampilan melakukan pencarian.<br>
     <img width="548" alt="image" src="https://github.com/user-attachments/assets/73541762-5693-457c-a3ff-81c2cba59111" /><br>
 16. Tampilan setelah menekan button Transaksi Absen.<br>
-    <img width="574" alt="image" src="https://github.com/user-attachments/assets/c36f2038-53b2-414a-9b78-2469022b7b25" /><br>
+    <img width="571" alt="image" src="https://github.com/user-attachments/assets/86699b3d-9587-489c-aeec-85b69b2055ab" /><br>
 17. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum dipilih/terisi.<br>
     <img width="569" alt="image" src="https://github.com/user-attachments/assets/8ce8dd80-19a5-43f4-a53e-a18e3572a907" /><br>
 18. Tampilan setelah menekan button tambah dengan semua inputan sudah terisi, dan lanjutkan menekan button ok, maka data akan masuk ke tabel.<br>
