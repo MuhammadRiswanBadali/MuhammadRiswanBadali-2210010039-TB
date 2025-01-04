@@ -64,7 +64,7 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Ada satu tabel untuk menampilkan segala informasi ketika button Periksa Laporan Absensi Bulanan atau button Laporan Pegawai dan Gaji ditekan.
     - Ada button Reset unutuk membersihkan inputan dan tabel. Juga menampilkan pesan berhasil melakukan reset setelah menekannya.
     - Ada button untuk kembali ke menu utama.
-Pada aplikasi ini, setiap perubahan data yang dilakukan pada form pegawai, form jabatan, atau form absensi akan langsung terupdate secara otomatis pada tabel terkait. Misalnya, jika ada perubahan pada data pegawai seperti nama atau jabatan, maka perubahan tersebut akan segera terlihat di semua form yang menggunakan data tersebut, termasuk laporan absensi bulanan dan laporan pegawai dan gaji.
+- Pada aplikasi ini, setiap perubahan data yang dilakukan pada form pegawai, form jabatan, atau form absensi akan langsung terupdate secara otomatis pada tabel terkait. Misalnya, jika ada perubahan pada data pegawai seperti nama atau jabatan, maka perubahan tersebut akan segera terlihat di semua form yang menggunakan data tersebut, termasuk laporan absensi bulanan dan laporan pegawai dan gaji.
 # TAMPILAN APLIKASI YANG DIBUAT (APLIKASI KEPEGAWAIAN)
 1. Tampilan awal aplikasi.<br>
    <img width="545" alt="image" src="https://github.com/user-attachments/assets/dbea08f5-295e-49f2-8c95-2cc050d60228" /><br>
