@@ -1,4 +1,6 @@
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.Connection;
@@ -8,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /*
@@ -57,6 +60,7 @@ public class JabatanForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,6 +136,13 @@ public class JabatanForm extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setText("Simpan Data");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -166,8 +177,10 @@ public class JabatanForm extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(257, 257, 257)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(267, 267, 267)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -194,8 +207,10 @@ public class JabatanForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -353,6 +368,54 @@ public class JabatanForm extends javax.swing.JFrame {
         this.setVisible(false); 
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // Membuat file chooser untuk memilih lokasi penyimpanan
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Simpan Data ke File CSV");
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("CSV files", "csv"));
+
+        // Jika pengguna memilih lokasi penyimpanan
+        int userSelection = fileChooser.showSaveDialog(this);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            String filePath = fileChooser.getSelectedFile().getAbsolutePath();
+            if (!filePath.endsWith(".csv")) {
+                filePath += ".csv"; // Tambahkan ekstensi .csv jika belum ada
+            }
+
+            try (FileWriter writer = new FileWriter(filePath)) {
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                int rowCount = model.getRowCount();
+                int colCount = model.getColumnCount();
+
+                // Menulis header kolom ke file CSV
+                for (int i = 0; i < colCount; i++) {
+                    writer.write(model.getColumnName(i));
+                    if (i < colCount - 1) {
+                        writer.write(",");
+                    }
+                }
+                writer.write("\n");
+
+                // Menulis data dari jTable1 ke file CSV
+                for (int i = 0; i < rowCount; i++) {
+                    for (int j = 0; j < colCount; j++) {
+                        writer.write(model.getValueAt(i, j).toString());
+                        if (j < colCount - 1) {
+                            writer.write(",");
+                        }
+                    }
+                    writer.write("\n");
+                }
+
+                // Menampilkan pesan sukses
+                JOptionPane.showMessageDialog(this, "Data berhasil disimpan ke " + filePath, "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException ex) {
+                Logger.getLogger(JabatanForm.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, "Gagal menyimpan data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -394,6 +457,7 @@ public class JabatanForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
