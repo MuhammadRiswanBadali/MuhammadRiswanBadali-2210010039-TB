@@ -35,7 +35,8 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Ada button bersih untuk membersihkan semua kolom inputan.
     - Terdapat inputan untuk mecari pegawai berdasarkan nama pegawai, dengan cara langsung saja menginputkan nama yang akan dicari maka langsung tampil pada tabel.
     - Terdapat satu tabel untuk menampung segala inputan.
-    - Terdapat satu button lagi untuk kembali ke menu utama.
+    - Terdapat button Simpan Data untuk melakukan simpan data yang ada pada tabel dengan format CSV.
+    - Terdapat button untuk kembali ke menu utama.
 - Form Master Jabatan
     - Ketika pengguna menekan Buttun Master Jabatan maka akan masuk ke form jabatan.
     - Terdapat inputan nama jabatan dan gaji pokok yg hanya dapat di isi dengan angka.
@@ -45,7 +46,8 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Ada button bersih untuk membersihkan semua kolom inputan.
     - Terdapat inputan untuk mecari jabatan berdasarkan nama jabatan, dengan cara langsung saja menginputkan nama jabatan yang akan dicari maka langsung tampil pada tabel.
     - Terdapat satu tabel untuk menampung segala inputan.
-    - Terdapat satu button lagi untuk kembali ke menu utama.
+    - Terdapat button Simpan Data untuk melakukan simpan data yang ada pada tabel dengan format CSV.
+    - Terdapat button untuk kembali ke menu utama.
 - Form Transaksi Absensi
     - Ketika pengguna menekan Buttun Transaksi Absen maka akan masuk ke form absensi.
     - Terdapat inputan pilih pegawai yang dapat dipilih sesuai yang telah di inputkan pada form pegawai, inputan tanggal yang dapat langsung dipilih, dan terdapat inputan status kehadiran yang dapat dipilih (Hadir, Izin, Sakit).
@@ -55,7 +57,8 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Ada button bersih untuk membersihkan semua kolom inputan.
     - Terdapat inputan untuk mecari pegawai berdasarkan nama pegawai yang ada pada tabel form absensi, dengan cara langsung saja menginputkan nama pegawai yang akan dicari maka langsung tampil pada tabel.
     - Terdapat satu tabel untuk menampung segala inputan.
-    - Terdapat satu button lagi untuk kembali ke menu utama.
+    - Terdapat button Simpan Data untuk melakukan simpan data yang ada pada tabel dengan format CSV.
+    - Terdapat button untuk kembali ke menu utama.
 - Form Laporan
     - Ketika pengguna menekan Button Laporan maka akan masuk ke form laporan.
     - Terdapat panel absensi yang mana didalamnya ada inputan bulan yang dapat dipilih langsung dan inputan tahun yang dapat dipilih langsung juga.
@@ -63,72 +66,6 @@ Dengan NPM 2210010039 maka saya pada UAS kali ini membuat Aplikasi Kepegawaian.
     - Terdapat panel pegawai dan gaji, yang mana didalamnya ada button Laporan Pegawai dan Gaji, Ketika ditekan maka akan menampilkan Nama pegawai, Nama jabatan, dan gaji pokok pada tabel.
     - Ada satu tabel untuk menampilkan segala informasi ketika button Periksa Laporan Absensi Bulanan atau button Laporan Pegawai dan Gaji ditekan.
     - Ada button Reset unutuk membersihkan inputan dan tabel. Juga menampilkan pesan berhasil melakukan reset setelah menekannya.
+    - Terdapat button Simpan Data untuk melakukan simpan data yang ada pada tabel dengan format CSV.
     - Ada button untuk kembali ke menu utama.
 - Pada aplikasi ini, setiap perubahan data yang dilakukan pada form pegawai, form jabatan, atau form absensi akan langsung terupdate secara otomatis pada tabel terkait. Misalnya, jika ada perubahan pada data pegawai seperti nama atau jabatan, maka perubahan tersebut akan segera terlihat di semua form yang menggunakan data tersebut, termasuk laporan absensi bulanan dan laporan pegawai dan gaji.
-# TAMPILAN APLIKASI YANG DIBUAT (APLIKASI KEPEGAWAIAN)
-1. Tampilan awal aplikasi.<br>
-   <img width="545" alt="image" src="https://github.com/user-attachments/assets/dbea08f5-295e-49f2-8c95-2cc050d60228" /><br>
-2. Tampilan setelah menekan button master pegawai.<br>
-   <img width="698" alt="image" src="https://github.com/user-attachments/assets/d80d1651-ab58-4211-ba20-974515360b1c" /><br>
-3. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
-   <img width="693" alt="image" src="https://github.com/user-attachments/assets/bf39e748-0746-4038-a037-de9042b3209b" /><br>
-4. Tampilan setelah menekan button tambah dan berhasil.<br>
-   <img width="694" alt="image" src="https://github.com/user-attachments/assets/24c20a3f-617d-4944-8710-a51801d96115" /><br>
-5. Tampilan Ketika memasukkan hurup pada inputan no telepon.<br>
-   <img width="695" alt="image" src="https://github.com/user-attachments/assets/c39a2326-7017-4893-8f88-efb9dbbb25bd" /><br>
-6. Tampilan Setelah melakukan perubahan pada ID Pegawai 18 (Nabila) dengan menekan button edit.<br>
-   <img width="697" alt="image" src="https://github.com/user-attachments/assets/2978d3dd-c614-491d-b039-1ced46039fe9" /><br>
-7. Tampilan Setelah menekan button hapus.<br>
-   <img width="697" alt="image" src="https://github.com/user-attachments/assets/fdc2fb30-458e-4508-83b1-82dd4539939b" /><br>
-   - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terhapus pada tabel.<br> 
-     <img width="195" alt="image" src="https://github.com/user-attachments/assets/4a6610c1-e84d-474d-ae4b-687eaa14da1f" /><br>
-8. Tampilan melakukan pencarian.<br>
-   <img width="698" alt="image" src="https://github.com/user-attachments/assets/846e03dc-30a8-4271-a8df-283631e66d3b" /><br>
-9. Tampilan setelah menekan button Master Jabatan.<br>
-   <img width="552" alt="image" src="https://github.com/user-attachments/assets/37186dd1-cd14-4a48-be05-a648c9aa4e84" /><br>
-10. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum terisi.<br>
-    <img width="552" alt="image" src="https://github.com/user-attachments/assets/64be96f6-8356-432e-a531-66fc5c41f11e" /><br>
-11. Tampilan Ketika memasukkan hurup pada inputan gaji pokok.<br>
-    <img width="556" alt="image" src="https://github.com/user-attachments/assets/4d32d8e2-c783-47d2-b5cf-d88a34ad2ac5" /><br>
-12. Tampilan setelah menekan button tambah dan berhasil.<br>
-    <img width="553" alt="image" src="https://github.com/user-attachments/assets/c1ad860b-0821-4d24-9400-3658f50e130a" /><br>
-13. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
-    <img width="553" alt="13" src="https://github.com/user-attachments/assets/08251001-06d7-46a3-8a70-44e8500a395f" /><br>
-    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terupdate otomatis pada tabel dan kolom inputan akan kosong.<br>
-      <img width="553" alt="13 1" src="https://github.com/user-attachments/assets/e081f1ba-3b47-4cb4-9004-de485ce26e88" /><br>
-14. Tampilan Setelah menekan button hapus.<br>
-    <img width="552" alt="14" src="https://github.com/user-attachments/assets/dddf62e4-efb1-45f0-ac8d-1cf72a0aae45" /><br>
-    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terhapus pada tabel.<br> 
-      <img width="556" alt="14 1" src="https://github.com/user-attachments/assets/c019a8b7-ce2e-4d84-900c-fc1ce66a866a" /><br>
-      <img width="553" alt="image" src="https://github.com/user-attachments/assets/fd46f72f-4c77-4cd3-8714-c76710021047" /><br>
-15. Tampilan melakukan pencarian.<br>
-    <img width="548" alt="image" src="https://github.com/user-attachments/assets/73541762-5693-457c-a3ff-81c2cba59111" /><br>
-16. Tampilan setelah menekan button Transaksi Absen.<br>
-    <img width="571" alt="image" src="https://github.com/user-attachments/assets/86699b3d-9587-489c-aeec-85b69b2055ab" /><br>
-17. Tampilan setelah menekan button tambah tetapi masih ada kolom inputan yang belum dipilih/terisi.<br>
-    <img width="569" alt="image" src="https://github.com/user-attachments/assets/8ce8dd80-19a5-43f4-a53e-a18e3572a907" /><br>
-18. Tampilan setelah menekan button tambah dengan semua inputan sudah terisi, dan lanjutkan menekan button ok, maka data akan masuk ke tabel.<br>
-    <img width="570" alt="image" src="https://github.com/user-attachments/assets/218c4057-5074-49fc-aeb8-a9c92a9fad81" /><br>
-19. Tampilan Setelah melakukan perubahan dengan menekan button edit.<br>
-    <img width="569" alt="19" src="https://github.com/user-attachments/assets/44a809fa-b1eb-4d50-aa51-09a111250a87" /><br>
-    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terupdate otomatis pada tabel dan inputan menjadi kosong.<br>
-    <img width="572" alt="19 1" src="https://github.com/user-attachments/assets/dfba8d3e-e067-4755-9bd1-1d233fb9f326" /><br>
-20. Tampilan Setelah menekan button hapus.<br>
-    <img width="572" alt="20" src="https://github.com/user-attachments/assets/25eb65a2-c960-4cbc-a572-591146a11372" /><br>
-    - Dilanjutkan menekan konfimasi "yes" lalu "Ok", maka data akan terhapus pada tabel.<br>
-    <img width="571" alt="20 1" src="https://github.com/user-attachments/assets/b39343d8-f2e6-421b-9c65-7526e8df3650" /><br>
-    <img width="571" alt="image" src="https://github.com/user-attachments/assets/3c949f6f-5ec6-418e-a56c-5dfc3a89b9bc" /><br>
-21. Tampilan melakukan pencarian.<br>
-    <img width="572" alt="image" src="https://github.com/user-attachments/assets/ceda7cc6-f724-457d-b733-9b0399e43cf0" /><br>
-22. Tampilan setelah menekan button Laporan.<br>
-    <img width="587" alt="image" src="https://github.com/user-attachments/assets/8652977a-ead8-4a4b-a84e-291244cc51fc" /><br>
-    - Tampilan menekan button "Periksa Laporan Absensi Bulanan" tetapi belum memilih bulan dan tahun.<br>
-      <img width="584" alt="image" src="https://github.com/user-attachments/assets/a7a0f13c-4f94-4569-84cb-56e75b00dc7f" /><br>
-23. Tampilan setelah memilih periode bulan dan tahun, dilanjutkan menekan button "Periksa Laporan Absensi Bulanan".<br>
-    <img width="586" alt="image" src="https://github.com/user-attachments/assets/a768f2ce-9be4-4a44-a649-a9baeaf450fc" /><br>
-    <img width="586" alt="image" src="https://github.com/user-attachments/assets/76371fcc-e0b1-4629-96a4-13ae7e8a170d" /><br>
-24. Tampilan setelah menekan button Reset.<br> 
-    <img width="585" alt="image" src="https://github.com/user-attachments/assets/23b43057-4bd5-4354-960e-8b7669edddcb" /><br>
-25. Tampilan setelah menekan button "Laporan Pegawai dan Gaji".<br>
-    <img width="584" alt="image" src="https://github.com/user-attachments/assets/387302f6-cdb8-45ff-a2c3-11e2ce1d090d" /><br>
-    <img width="586" alt="image" src="https://github.com/user-attachments/assets/c8463b5f-0ed8-483f-bec2-88c30ee220ce" /><br>
